@@ -12,11 +12,13 @@ console.log(b); // undefined
 // a and b are treated as variables while memory creation phase
 // so initiallly the are {a: undefined, b: undefined ...}
 
-greet();
+greet(); // Hello
 a(); // TypeError: a is not a function
 b(); // TypeError: b is not a function
 
 var x = 3;
+
+// let and const do not support hoisting
 
 console.log(y); // ReferenceError: Cannot access 'y' before initialization
 console.log(z); // ReferenceError: Cannot access 'z' before initialization
