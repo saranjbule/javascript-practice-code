@@ -10,7 +10,7 @@ console.log(greet); // function
 console.log(a); // undefined
 console.log(b); // undefined
 // a and b are treated as variables while memory creation phase
-// so initiallly the are {a: undefined, b: undefined ...}
+// so initiallly {a: undefined, b: undefined ...}
 
 greet(); // Hello
 a(); // TypeError: a is not a function
@@ -40,3 +40,8 @@ var a = () => {
 var b = function () {
   console.log("hi from b");
 };
+
+/**
+ * Undefined: Special keyword that is used to denote the variable before initalization /whose value is yet to set [some memory is allocated]
+ * Not defined: Unable to locate a variable with _ name [no memory is allocated]
+ */
