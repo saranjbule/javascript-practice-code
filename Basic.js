@@ -16,4 +16,4 @@ x = 10;
 console.log(x); // 10
 
 x = undefined; // Bad practice
-console.log(x) // undefined
+console.log(x); // undefined
