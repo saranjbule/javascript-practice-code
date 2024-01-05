@@ -11,9 +11,9 @@
   var a = 1;
   let b = 2;
   const c = 3;
-  // a, b, c are accessible
+  // Inside: a, b, c are accessible
 }
-// only a is accessible
+// Outside: only a is accessible
 
 // Shadowing
 var x = 10;

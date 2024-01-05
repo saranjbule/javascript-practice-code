@@ -9,7 +9,7 @@ console.log(greet); // function
 
 console.log(a); // undefined
 console.log(b); // undefined
-// a and b are treated as variables while memory creation phase
+// function expression (a) and arrow function (b) are treated as variables while memory creation phase
 // so initiallly {a: undefined, b: undefined ...}
 
 greet(); // Hello
