@@ -15,6 +15,7 @@
 }
 // Outside: only a is accessible
 
+
 // Shadowing
 var x = 10;
 {
