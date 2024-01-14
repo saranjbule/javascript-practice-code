@@ -13,8 +13,8 @@ console.log(b); // undefined
 // so initiallly {a: undefined, b: undefined ...}
 
 greet(); // Hello
-a(); // TypeError: a is not a function
-b(); // TypeError: b is not a function
+// a(); // TypeError: a is not a function
+// b(); // TypeError: b is not a function
 
 var x = 3;
 
@@ -28,16 +28,18 @@ when variable (with let or const) is (declared) hosted and
 till it get initialized with some value.
 */
 
-console.log(y); // ReferenceError: Cannot access 'y' before initialization
-console.log(z); // ReferenceError: Cannot access 'z' before initialization
+// console.log(y); // ReferenceError: Cannot access 'y' before initialization
+// console.log(z); // ReferenceError: Cannot access 'z' before initialization
 
 const y = 3;
 let z = 3;
 
-// function declaration
-function greet() {
-  console.log("Hello");
+// function declaration/ function statement
+function greet(param) {
+  console.log("Hello", param); // saranj is passed to greet as a parameter which is local to the function
 }
+
+greet("saranj"); // saranj is argument
 
 // Arrow function
 var a = () => {
@@ -46,13 +48,28 @@ var a = () => {
 
 // function expression
 var b = function () {
+  // anonymous function (a function without a name)
   console.log("hi from b");
 };
+
+// name function expression
+
+var c = function p() {
+  console.log("hi from p");
+  console.log(p); // function p
+};
+
+c();
+p(); // Reference Error: p is not defined as function p is stored inside c and not available outside of c
+
+/**
+ * Difference between function expression and function declaration is hoisting
+ */
 
 /**
  * Undefined
  * - Special keyword that is used to denote the variable before initalization (whose value is yet to set) [some memory is allocated]
- * 
+ *
  * Not defined
  * - Unable to locate a variable with some name in execution context [no memory is allocated]
  */
