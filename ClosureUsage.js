@@ -47,3 +47,5 @@ const multiply3 = multiplyer(3);
 
 multiply2(10);
 multiply3(10);
+
+multiplyer(4)(8);
