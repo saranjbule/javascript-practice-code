@@ -50,35 +50,3 @@ for (let i = 0; i < 10; i++) {
  * - setTimeouts
  * - Iterators ...
  */
-
-// Data privacy
-
-// Function 1:  Problem : varialbe a is global scope so anyone can alter variable a
-var a = 10; // global scope
-function increment() {
-  a++;
-  console.log(a);
-}
-
-increment(); // 11
-increment(); // 12
-
-// Function 2: Solution
-function y() {
-  var count = 0; // function scope
-  return function z() {
-    count++;
-    console.log(count);
-  };
-}
-
-// console.log(count); // Reference Error: count is not defined
-
-counter = y();
-counter(); // 1
-counter(); // 2
-counter(); // 3
-
-counter2 = y();
-counter2(); // 1
-counter2(); // 2
