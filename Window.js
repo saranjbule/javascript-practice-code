@@ -18,7 +18,7 @@ console.log(window); // window object
 
 console.log(this === window); // true
 
-// variable using the var keyword in the global scope / outside of any function,
+// variable declared using the var keyword in the global scope (outside of any function)
 // the variable becomes a property of the global object,
 // which is often the window object in a browser environment.
 

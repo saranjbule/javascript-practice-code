@@ -24,6 +24,7 @@ function f() {
       console.log(i); // 0, 1, 2...
     }, i * 1000);
   }
+
   for (var i = 0; i < 6; i++) {
     setTimeoutFun(i);
   }

@@ -4,7 +4,7 @@
 
 
 // Loosely - a variable can hold multiple types of data type
-
+// varialbe mutation
 var x;
 console.log(x, typeof x); // undefined undefined
 

@@ -48,12 +48,11 @@ var a = () => {
 
 // function expression
 var b = function () {
-  // anonymous function (a function without a name)
+  // anonymous function (function without name)
   console.log("hi from b");
 };
 
 // name function expression
-
 var c = function p() {
   console.log("hi from p");
   console.log(p); // function p
