@@ -3,7 +3,7 @@
  * - Function are first class citizens in javascript
  * - function can passed as an arguments to another function
  * - this function are called as callback function
- * - with help of callback functions we can perform asynchronous operation in javascript
+ * - with the help of callback functions we can perform asynchronous operation in javascript
  */
 
 const buttonClicked = () => {
@@ -11,7 +11,7 @@ const buttonClicked = () => {
 
   return () => {
     count++;
-    console.log('button click', count);
+    console.log('button click', count); // 1 2 3 4 ... with each click
   };
 
 };
@@ -21,14 +21,14 @@ function bClick() {
 
   function bClickIncre() {
     b++;
-    console.log('button click', b);
+    console.log('button click', b); // 1 2 3 4 ... with each click
   }
 
   return bClickIncre;
 }
 
 const button = document.getElementById("button");
-bC = bClick();
+bC = buttonClicked();
 button.addEventListener("click", bC);
 
 /**

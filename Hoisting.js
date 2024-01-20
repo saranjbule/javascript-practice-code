@@ -19,7 +19,7 @@ greet(); // Hello
 var x = 3;
 
 /** 
-let and const variables are hoisting but they are
+let and const variables declaration are hoisting but they are
 hoisted differently than var keyword they are in
 Temporal Dead Zone (not attached to window object)
 
@@ -62,7 +62,7 @@ c();
 p(); // Reference Error: p is not defined as function p is stored inside c and not available outside of c
 
 /**
- * Difference between function expression and function declaration is hoisting
+ * Difference between function expression and function declaration is hoisting.
  */
 
 /**

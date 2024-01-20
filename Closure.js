@@ -12,7 +12,7 @@ function x() {
   y();
 }
 
-x();
+x(); // 10
 
 function x() {
   let a = 10;
@@ -28,7 +28,7 @@ console.log(f); // function y
 
 // function x no longer exists but function y still remember it's lexical scope
 for (let i = 0; i < 10; i++) {
-  f();
+  f(); // 10 11 12
 }
 
 /**

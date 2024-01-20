@@ -34,6 +34,10 @@ counter2(); // 2
 
 /**
  * Currying
+ * Currying in JavaScript transforms a function with multiple parameters
+ * into a nested series of functions, each taking a single parameter.
+ * Currying helps you avoid passing the same variable multiple times,
+ * and it helps you create a higher order function.
  * */
 
 const multiplyer = (a) => {

@@ -1,10 +1,11 @@
 /**
- * Javascript is loosely/ weakly typed language
+ * Javascript is loosely, weakly, dynamically typed language
  */
 
 
 // Loosely - a variable can hold multiple types of data type
 // varialbe mutation
+
 var x;
 console.log(x, typeof x); // undefined undefined
 
@@ -21,7 +22,6 @@ x = undefined; // Bad practice
 console.log(x, typeof x); // undefined undefined
 
 
-
 // Weakly - Coercion
 
 // Implicit Coercion
@@ -35,3 +35,9 @@ console.log(a, typeof a); // 50 number
 a = "";
 a = Number(a);
 console.log(a, typeof a); // 0 number
+
+/**
+ * JavaScript is a dynamically typed language. 
+ * In a dynamically typed language, the type of a variable is checked during run-time 
+ * in contrast to a statically typed language, where the type of a variable is checked during compile-time.
+ */
