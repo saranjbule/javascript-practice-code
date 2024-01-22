@@ -1,7 +1,7 @@
 /***
-* var keyword is global and function scope
-* let keyword is block scope
-*/
+ * var keyword is global and function scope
+ * let keyword is block scope
+ */
 
 // before setTimeout closure function run, i value get updated with 6
 // as JS is synchronous single threaded language
@@ -34,7 +34,7 @@ function f() {
 
 f();
 
-// let is block scope which means 
+// let is block scope which means
 // with each callback function of setTimeout new i is associated with it
 function f1() {
   for (let i = 0; i < 6; i++) {
@@ -47,3 +47,26 @@ function f1() {
 }
 
 f1();
+
+/**
+ * SetTimeout doesn't guarented it will surely run after specific time but
+ * it state it will wait for least specificed time
+ */
+
+console.log("start");
+
+setTimeout(() => {
+  console.log("setTimeout");
+}, 4000);
+
+const d = new Date();
+let startTime = d.getTime();
+const endTime = startTime + 7000;
+
+// blocking the main thread
+while (startTime < endTime) {
+  const d = new Date();
+  startTime = d.getTime();
+}
+
+console.log("end");
