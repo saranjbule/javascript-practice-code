@@ -5,7 +5,7 @@
 }
 
 // let and const are blocked scope
-// var has global & function scope
+// var is functional scope
 
 {
   var a = 1;

@@ -1,5 +1,5 @@
 /***
- * var keyword is global and function scope
+ * var keyword is function scope
  * let keyword is block scope
  */
 

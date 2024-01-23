@@ -35,7 +35,7 @@ for (let i = 0; i < 10; i++) {
  * Disadvantages of Closure
  * - over consumption of memory
  * - varaible defined inside the closure are not automatically garbage collected which result in memory leaks
- * - but some garbage collector automatically removed unreferenced/ unused variables
+ * - but some garbage collectors automatically removed unreferenced/ unused variables
  */
 
 
