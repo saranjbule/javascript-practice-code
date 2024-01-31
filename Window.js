@@ -1,7 +1,7 @@
 /**
  * At runtime, every JS file (even empty js file) creates
  * 1. GEC (global execution context)
- * 2. Global Object (Window)
+ * 2. Global Object (Window (in context of browser))
  * 3. this variable (pointing/ referencing to Window object)
  */
 
