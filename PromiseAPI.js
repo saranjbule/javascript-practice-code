@@ -23,7 +23,7 @@ const [r1, r2, r3] = Promise.all([p1, p2, p3]);
  * - wait for all the promises to settle irrespective of success or failure
  *
  * - if p1 gets failed Promise.allSettled() will wait for 8s max(5s, 2s, 8s) and result will be [err, r2, r3]
- * - i.e., result array.length === promiseArray.length
+ * - i.e., resultArray.length === promiseArray.length
  */
 
 /**

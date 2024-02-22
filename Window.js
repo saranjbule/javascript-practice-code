@@ -1,7 +1,7 @@
 /**
  * At runtime, every JS file (even empty js file) creates
  * 1. GEC (global execution context)
- * 2. Global Object (Window (in context of browser))
+ * 2. Global Object (Window in context of browser)
  * 3. this variable (pointing/ referencing to Window object)
  */
 
@@ -10,7 +10,7 @@ const y = 2;
 let z = 3;
 
 function f() {
-  var t = 4;
+  var t = 4; // t is function scoped
 }
 
 console.log(this); // window object
@@ -30,5 +30,7 @@ console.log(x); // 1
 console.log(t); // ReferenceError: t is not defined
 
 // let & const variable are not attachted to window object
+// They are scoped to the current block or module, 
+// promoting better code organization and preventing conflicts (overriding).
 console.log(window.y); // undefined
 console.log(window.z); // undefined

@@ -19,8 +19,8 @@ greet(); // Hello
 var x = 3;
 
 /** 
-let and const variables declaration are hoisting but they are
-hoisted differently than var keyword they are in
+let and const variable declarations are hosted
+but they are hoisted differently than var keyword they are in
 Temporal Dead Zone (not attached to window object)
 
 Temporal Dead Zone is time 

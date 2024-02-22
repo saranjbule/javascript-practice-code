@@ -53,7 +53,7 @@ promiseObj
 
 // with promise we have control of the program
 // promise gives guarantee that once the data is available in promise object
-// then only call the callback function (only once)
+// then only once call the callback function
 */
 
 const API = "https://api.github.com/users/saranjbule";
@@ -61,7 +61,7 @@ const API = "https://api.github.com/users/saranjbule";
 // by default fetch returns promise
 
 /**
- * Consuming Promise
+ * Consuming Promise ***
  */
 const result = fetch(API).then((data) => {
   console.log(data);
@@ -70,7 +70,7 @@ const result = fetch(API).then((data) => {
 console.log(result); // show promise in pending state as JS waits for None
 
 /**
- * Producing Promise
+ * Producing Promise ***
  */
 function tryPromise(data = null) {
   const promise = new Promise((resolve, reject) => {

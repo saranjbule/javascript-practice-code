@@ -1,6 +1,6 @@
 /**
  * Closure
- * - A function binds/ bundles (enclosed) together with it's lexical enviornment.
+ * - A function binds/ bundles/ enclosed together with it's lexical enviornment.
  * - Function along with its lexical scope forms a closure.
  */
 
@@ -9,7 +9,7 @@ function x() {
   function y() {
     console.log(a);
   }
-  y();
+  y(); // closure
 }
 
 x(); // 10

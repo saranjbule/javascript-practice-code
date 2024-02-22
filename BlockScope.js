@@ -19,7 +19,7 @@
 // Shadowing
 var x = 10;
 {
-  var x = 100;
+  var x = 100; // redeclaration
   console.log(x); // 100
 }
 console.log(x); // 100

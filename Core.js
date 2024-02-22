@@ -22,7 +22,8 @@ x = undefined; // Bad practice
 console.log(x, typeof x); // undefined undefined
 
 
-// Weakly - Coercion
+// Weakly - a variable can change one type to another
+// Coercion
 
 // Implicit Coercion
 a = 10 + "0";

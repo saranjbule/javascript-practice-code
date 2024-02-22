@@ -1,9 +1,13 @@
 /**
  * Callback Functions
  * - Function are first class citizens in javascript
- * - function can passed as an arguments to another function
  * - this function are called as callback function
  * - with the help of callback functions we can perform asynchronous operation in javascript
+ * 
+ * Properties of First Class Citizen, functions
+ * - function can passed as an arguments to another function
+ * - function can be returned from another function
+ * - function cab be stored into variable
  */
 
 const buttonClicked = () => {
@@ -12,7 +16,7 @@ const buttonClicked = () => {
   return () => {
     count++;
     console.log("button click", count); // 1 2 3 4 ... with each click
-  };
+  }; // callback function
 };
 
 function bClick() {
@@ -23,7 +27,7 @@ function bClick() {
     console.log("button click", b); // 1 2 3 4 ... with each click
   }
 
-  return bClickIncre;
+  return bClickIncre; // callback function
 }
 
 const button = document.getElementById("button");
@@ -49,9 +53,11 @@ button.addEventListener("click", bC);
  *
  * - Problem 2: Inversion of control
  *   - loose control of our program
+ * 
  *   - we expect a function to call the callback function for us
  *   - (we have given all the control of a callback to that function)
  *   - (we are blindly trusting that function to call the callback and return result)
+ * 
  *   - Unexpected result may occurs
  *   - callback function never get call
  *   - callback function get call twice

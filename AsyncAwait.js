@@ -28,8 +28,6 @@ function handlePromiseOld() {
 }
 
 handlePromiseOld();
-// Output -
-// in old
 // Resolved Promise
 
 // new way
@@ -44,6 +42,4 @@ async function handlePromiseNew() {
 // once resolved function continues from where it was left
 
 handlePromiseNew();
-// Output -
 // Resolved Promise
-// in new

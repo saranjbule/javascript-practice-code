@@ -2,7 +2,7 @@
  * Data privacy/ Data hiding/ Encapsulation
  * */
 
-// Function 1:  Problem : variable a is global scope so anyone can alter variable a
+// Function 1:  Problem : variable a is global scope so anyone can alter variable a which result in unexpected outcome
 var a = 10; // global scope
 function increment() {
   a++;
@@ -10,6 +10,7 @@ function increment() {
 }
 
 increment(); // 11
+a = 20;
 increment(); // 12
 
 // Function 2: Solution

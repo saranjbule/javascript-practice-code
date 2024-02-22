@@ -1,20 +1,47 @@
-"use strict";
+'use strict'
 
-console.log(this); // Global Object (Window in context of browsers) in strict as well as non-strict mode
+console.log(this); 
+// strict => Global Object (Window in context of browsers)
+// non-strict mode => Global object
 
+// function declaration
 function x() {
+  // value of this keyword is defined by how the function is called
   console.log(this);
 }
 
-x(); // Global Object in non-strict mode | undefined in strict mode
+x();
+// strict => undefined
+// non-strict mode => Global object
 
-// value of this keyword is defined by how the function is called
-window.x(); // Global Object in non-strict mode | Global Object in strict mode
+window.x();
+// strict => Global Object (Window in context of browsers)
+// non-strict mode => Global object
+
+// function expresion
+const fe = function () {
+  console.log(this);
+}
+
+fe();
+// strict => undefined
+// non-strict mode => Global object
+
+// window.fe() => ERROR // const are not attached to window object
+
+// arrow function
+const af = () => {
+  console.log(this);
+}
+
+af();
+// strict => Global object
+// non-strict mode => Global object
 
 /**
  * this substitution
- * - if value of this is undefined or null in non-strict mode then
- * - value of this gets replaced with global object
+ * - if value of this is undefined or null in non-strict mode
+ * - then value of this gets replaced with global object
  */
 
 // this inside object method
@@ -22,27 +49,27 @@ window.x(); // Global Object in non-strict mode | Global Object in strict mode
 const y = {
   a: "a",
   b: function () {
-    console.log(this);
+    console.log(this); // y
   },
   c: () => {
-    console.log(this);
+    console.log(this); // window
   },
   d: function () {
-    console.log(this);
-    const d1 = () => console.log(this);
+    console.log(this); // y
+    const d1 = () => console.log(this); // y
     d1();
   },
   e: () => {
-    console.log(this);
-    const e1 = () => console.log(this);
+    console.log(this); // window
+    const e1 = () => console.log(this); // window
     e1();
   },
 };
 
-y.b(); // y
-y.c(); // window
-y.d(); // y
-y.e(); // window
+y.b();
+y.c();
+y.d();
+y.e();
 
 /**
  * Arrow function do not provide their own this binding
