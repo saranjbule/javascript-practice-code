@@ -1,5 +1,5 @@
 /**
- * wherever an Execution Context is created a Lexical Enviornment is also created.
+ * whenever an Execution Context is created a Lexical Enviornment is also created.
  * Lexical env is Local memory along with the lexical env of its parent
  * Lexical Env = local memory + lexical env of parent
  * 
@@ -13,7 +13,7 @@ function a() {
   b();
 
   function b() {
-    console.log(x); // 10
+    console.log(x);
   }
 }
 

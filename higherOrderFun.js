@@ -1,7 +1,7 @@
 /**
  * Functional Programming
  * divided a larger function into smaller functions
- * which has smaller unit of work to perform
+ * each function has smaller unit of work to perform
  * which brings -
  * reusability, modularity, readability, composition of functions
  */
@@ -47,6 +47,8 @@ console.log(oddVal);
 // REDUCE - used to take all the values of array and return single value
 const sum = radius.reduce((acc, curr) => acc + curr);
 console.log(sum);
+
+console.log(radius.reduce((acc, curr) => (acc > curr ? acc : curr)));
 
 const max = radius.reduce((max, curr) => {
   if (curr > max) {

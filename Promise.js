@@ -77,7 +77,7 @@ function tryPromise(data = null) {
     if (data) {
       setTimeout(() => {
         resolve(data);
-      }, 5000);
+      }, 0);
     } else {
       reject("Promise Rejected");
     }

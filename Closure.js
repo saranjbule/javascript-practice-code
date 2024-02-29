@@ -34,19 +34,20 @@ for (let i = 0; i < 10; i++) {
 /**
  * Disadvantages of Closure
  * - over consumption of memory
- * - varaible defined inside the closure are not automatically garbage collected which result in memory leaks
+ * - varaible defined inside the closure are not automatically garbage collected
+ * - which result in memory leaks
  * - but some garbage collectors automatically removed unreferenced/ unused variables
  */
 
 
 /**
  * Uses of Closure
- * - Module Design Pattern
- * - Currying
- * - data privacy/ data hiding/ encapsulation
- * - Function like once
- * - memoize
- * - maintaining state in async world
- * - setTimeouts
- * - Iterators ...
+ * - 1 Module Design Pattern
+ * - 2 Currying
+ * - 3 data privacy/ data hiding/ encapsulation
+ * - 4 Function like once
+ * - 5 memoize
+ * - 6 maintaining state in async world
+ * - 7 setTimeouts
+ * - 8 Iterators ...
  */

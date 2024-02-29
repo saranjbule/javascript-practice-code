@@ -1,6 +1,12 @@
-'use strict'
+/**
+ * this substitution
+ * - if value of this is undefined or null in non-strict mode
+ * - then value of this gets replaced with global object
+ */
 
-console.log(this); 
+"use strict";
+
+console.log(this);
 // strict => Global Object (Window in context of browsers)
 // non-strict mode => Global object
 
@@ -15,13 +21,13 @@ x();
 // non-strict mode => Global object
 
 window.x();
-// strict => Global Object (Window in context of browsers)
+// strict => Global Object
 // non-strict mode => Global object
 
 // function expresion
 const fe = function () {
   console.log(this);
-}
+};
 
 fe();
 // strict => undefined
@@ -29,36 +35,49 @@ fe();
 
 // window.fe() => ERROR // const are not attached to window object
 
+var fe2 = function () {
+  console.log(this);
+};
+
+fe2();
+// strict => undefined
+// non-strict mode => Global object
+window.fe2();
+// strict => Global object
+
+/**
+ * Arrow function do not provide their own this binding
+ * they retain the value of their enclosed lexical context
+ */
+
 // arrow function
 const af = () => {
   console.log(this);
-}
+};
 
 af();
 // strict => Global object
 // non-strict mode => Global object
 
-/**
- * this substitution
- * - if value of this is undefined or null in non-strict mode
- * - then value of this gets replaced with global object
- */
-
 // this inside object method
 
 const y = {
   a: "a",
+
   b: function () {
     console.log(this); // y
   },
+
   c: () => {
     console.log(this); // window
   },
+
   d: function () {
     console.log(this); // y
     const d1 = () => console.log(this); // y
     d1();
   },
+
   e: () => {
     console.log(this); // window
     const e1 = () => console.log(this); // window
@@ -70,8 +89,3 @@ y.b();
 y.c();
 y.d();
 y.e();
-
-/**
- * Arrow function do not provide their own this binding
- * they retain the value of their enclosed lexical context
- */

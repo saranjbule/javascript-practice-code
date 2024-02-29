@@ -64,7 +64,7 @@ const d = new Date();
 let startTime = d.getTime();
 const endTime = startTime + 7000;
 
-// blocking the main thread
+// blocking the main thread // as call stack is not empty
 while (startTime < endTime) {
   const d = new Date();
   startTime = d.getTime();
