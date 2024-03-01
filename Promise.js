@@ -12,7 +12,7 @@
  * - Promise Result = Used to store data returned by promise,
  * - initially it is undefined
  *
- * - Promise Object are immutable
+ * - Promise Objects are immutable
  */
 
 /** 

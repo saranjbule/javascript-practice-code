@@ -1,7 +1,7 @@
 /**
  * Async & Await
  * - Async and Await are used to handled promises
- * - Async is a keyword which is used to created async function
+ * - Async is a keyword which is used to created async function which always return promise
  * - Await keyword can only be used inside an async functions and infront of promise
  */
 
@@ -37,9 +37,9 @@ async function handlePromiseNew() {
   console.log("in new");
 }
 
-// function execution is stop till promise is resolved 
+// function execution will stop till promise is resolved 
 // i.e., function execution context is pop out of call stack
-// once resolved function continues from where it was left
+// once resolved function continues from where it was left off
 
 handlePromiseNew();
 // Resolved Promise

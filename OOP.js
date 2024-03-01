@@ -103,7 +103,7 @@ function Employee(name) {
 
   // setter method
   this.setCategory = function (val) {
-    category = "yy";
+    category = val;
   };
 }
 

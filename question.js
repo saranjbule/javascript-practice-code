@@ -84,7 +84,7 @@ console.log(x.category); // xx
 x.name = "newName"; // do not alter in-build function
 console.log(x.name); // x
 
-x.category = "yy";
+x.category = "yy"; // can alter user-defined property
 console.log(x.category); // yy
 
 console.log(x.prototype); // constructor object
@@ -100,6 +100,7 @@ const p1 = {
 
 console.log(p1);
 console.log(p1.name); // p1
+
 // creating object using prototype of p1
 const p2 = Object.create(p1);
 
@@ -107,19 +108,20 @@ console.log(p2);
 console.log(p1.name); // p1
 
 // predict output
+
 function createUser(name) {
-  const userObj = Object.create(userFunctionStore); 
+  const userObj = Object.create(userFunctionStore);
   userObj.name = name;
   return userObj;
 }
 
 const userFunctionStore = {
-  greet: function() {
-      console.log(`Hello ${this.name}`)
+  greet: function () {
+    console.log(`Hello ${this.name}`);
   },
-}
+};
 
-const user1 = createUser("Foo")
-console.log(user1) //{name: 'Foo'}
-console.log(user1.name) // Foo
-user1.greet() // Hello Foo
+const user1 = createUser("Foo");
+console.log(user1); //{name: 'Foo'}
+console.log(user1.name); // Foo
+user1.greet(); // Hello Foo
