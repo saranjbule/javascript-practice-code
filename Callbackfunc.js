@@ -3,12 +3,13 @@
  * - Function are first class citizens in javascript
  * 
  * A programming language is said to have First-class functions
- * if functions in that language are treated like other variables.
+ * if functions in that language are treated just like other variables.
  * 
  * Properties of First Class Citizen, functions
  * - function can passed as an arguments to another function
  * - function can be returned from another function
- * - function cab be stored into variable
+ * - function can be stored into variable
+ * - function can be stored into objects
  *
  * - this function are called as callback function
  * 
@@ -41,7 +42,7 @@ button.addEventListener("click", bC);
 
 /**
  * Event Listerners
- * - event listeners are heavy as it forms closures and closure over consume memory
+ * - event listeners are heavy as it forms closures and closure over consume memory i.e., Memory Leaks
  * - good practice is to remove event listeners after its use
  * - as all unused memeory get garbage collected by garbage collector
  */

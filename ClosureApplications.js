@@ -18,7 +18,7 @@ const module = () => {
 
   // public method
   const d = () => {
-    c(a);
+    c(a); // getter/ accessor
     console.log("d");
   };
 

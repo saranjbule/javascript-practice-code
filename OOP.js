@@ -31,7 +31,7 @@ const c1 = new Circle(2);
 c1.drawCircle(); // Circle {radius: 2, drawCircle: ƒ}
 
 const c2 = new Circle(5);
-c2.drawCircle();
+c2.drawCircle(); // Circle {radius: 5, drawCircle: ƒ}
 
 /**
  * Constructor using class
@@ -73,7 +73,7 @@ const c1_1 = Circle1(2);
 c1_1.drawCircle(); // {r: 2, drawCircle: ƒ}
 
 const c2_2 = Circle1(5);
-c2_2.drawCircle();
+c2_2.drawCircle(); // {r: 5, drawCircle: ƒ}
 
 /**
  * Abstraction
@@ -96,12 +96,12 @@ function Employee(name) {
     console.log(this.name);
   };
 
-  // getter method
+  // getter/ accessor method
   this.getCategory = function () {
     getCategoryInternal();
   };
 
-  // setter method
+  // setter/ mutator method
   this.setCategory = function (val) {
     category = val;
   };

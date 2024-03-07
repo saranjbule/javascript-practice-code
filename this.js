@@ -47,7 +47,7 @@ window.fe2();
 
 /**
  * Arrow function do not provide their own this binding
- * they retain the value of their enclosed lexical context
+ * they retain the value of this from their enclosed lexical context
  */
 
 // arrow function

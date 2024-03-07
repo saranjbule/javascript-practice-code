@@ -6,7 +6,7 @@
  * - Promise object consists of Promise State and Promise Result
  *
  * - Promise State = Shows the state of a promise,
- * - initially it show pending state then change it to fullfilled or rejected state
+ * - initially it show pending state then it change to fullfilled or rejected state
  *   - Pending | Fullfilled | Rejected
  *
  * - Promise Result = Used to store data returned by promise,
@@ -20,7 +20,7 @@
  * 
 const cart = ["shirt", "pant", "chair", "bag", "shoes"];
 
-// passing callback function to another function
+// **** passing callback function to another function ****
 
 API.createOrder(cart, function (orderId) {
   API.proceedToPayment(orderId, function (paymentId) {
@@ -30,8 +30,9 @@ API.createOrder(cart, function (orderId) {
   });
 });
 
-// attaching callback function to promise object
-// a callback function is attach to promise object with .then() (method/ function)
+// **** attaching callback function to promise object ****
+
+// a callback function is attach to promise object with
 // successful callback method = .then()
 // failure callback method = .catch()
 
@@ -52,7 +53,7 @@ promiseObj
   });
 
 // with promise we have control of the program
-// promise gives guarantee that once the data is available in promise object
+// promise gives us guarantee that once the data is available in promise object
 // then only once call the callback function
 */
 
@@ -68,6 +69,12 @@ const result = fetch(API).then((data) => {
 });
 
 console.log(result); // show promise in pending state as JS waits for None
+
+async function getResult() {
+  return await fetch(API);
+}
+
+console.log(getResult());
 
 /**
  * Producing Promise ***

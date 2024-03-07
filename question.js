@@ -75,13 +75,13 @@ function x(para) {
 x("bule"); // saranj bule
 console.log(x); // f
 console.log(x.name); // x // build-in method get the name of function
-console.log(x.age); // undefined
+console.log(x.age); // undefined // age is not accessible outside
 
 // function have predefined properties - name, length, prototype ...
 x.category = "xx"; // attaching a user defined property (category) to the JavaScript object (i.e., function)
 console.log(x.category); // xx
 
-x.name = "newName"; // do not alter in-build function
+x.name = "newName"; // do not alter in-build property
 console.log(x.name); // x
 
 x.category = "yy"; // can alter user-defined property
@@ -98,13 +98,13 @@ const p1 = {
   },
 };
 
-console.log(p1);
+console.log(p1); // {name: 'p1', getName: f}
 console.log(p1.name); // p1
 
 // creating object using prototype of p1
 const p2 = Object.create(p1);
 
-console.log(p2);
+console.log(p2); // {}
 console.log(p1.name); // p1
 
 // predict output
