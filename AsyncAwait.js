@@ -116,5 +116,5 @@ getData();
 /**
  * handling erros
  * in promises - by attaching failure (.catch()) callbacks
- * in async await - by using try catch block or by attaching failure callback to aysnc function
+ * in async await - by using try catch block or by attaching failure callback to aysnc function returned promise object
  */

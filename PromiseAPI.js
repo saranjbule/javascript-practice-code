@@ -16,7 +16,7 @@
 // it will not wait for other promises to get their result (settle [resolved or rejected])
 
 // whenever the promises are executed we can not terminate the promise in between, once initiated
-// cancelable promises
+// other concept - cancelable promises
 
 /**
  * Promise.allSettled()
