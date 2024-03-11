@@ -1,6 +1,6 @@
 /**
  * this substitution
- * - if value of this is undefined or null in non-strict mode
+ * - if value of this keyword is undefined or null in non-strict mode
  * - then value of this gets replaced with global object
  */
 
@@ -12,7 +12,7 @@ console.log(this);
 
 // function declaration
 function x() {
-  // value of this keyword is defined by how the function is called
+  // value of this keyword is defined by how the function is called (runtime binding)
   console.log(this);
 }
 
@@ -46,8 +46,8 @@ window.fe2();
 // strict => Global object
 
 /**
- * Arrow function do not provide their own this binding
- * they retain the value of this from their enclosed lexical context
+ * Arrow function don't provide their own this binding
+ * they retains the value of this from their enclosed lexical context
  */
 
 // arrow function
@@ -60,6 +60,9 @@ af();
 // non-strict mode => Global object
 
 // this inside object method
+/**
+ * Function inside object are called as method
+ */
 
 const y = {
   a: "a",
