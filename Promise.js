@@ -103,3 +103,8 @@ const p1 = tryPromise()
   .catch((err) => console.log(err));
 
 console.log(p1);
+
+/**
+ * - Promise.resolve() and Promise.reject() are synchronous in terms of creating and setting the Promise's state.
+ * - The handling of the resolved/rejected value through .then() and .catch() is asynchronous.
+ */

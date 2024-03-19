@@ -1,5 +1,5 @@
 /**
- * Value if this can be tweak by call, apply and bind methods
+ * Value if this keyword can be tweak by call, apply and bind methods
  */
 
 /**
@@ -49,5 +49,21 @@ console.log(multiply3()); // 6
 console.log(multiply2(10)); // 20
 
 const multiplyX = multiply.bind(this, 10, 20, 30); // 600
-
 console.log(multiplyX());
+
+const multiplyY = multiply.bind(this);
+console.log(multiplyY(5, 2, 1)); // 10
+
+
+/**
+ * Pollyfill for bind : Browser fallback for bind method | if browser doesn't support bind method
+ */
+
+Function.prototype.myBind = function (params) {
+  return this;
+};
+
+const getNameP3 = person1.getName.myBind(person2);
+
+console.log(getNameP3);
+getNameP3();

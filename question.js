@@ -125,3 +125,55 @@ const user1 = createUser("Foo");
 console.log(user1); //{name: 'Foo'}
 console.log(user1.name); // Foo
 user1.greet(); // Hello Foo
+
+fun1(); // function declaration
+/**
+ * Hoisting: Function declarations are hoisted, function expressions are not.
+ */
+
+/** order doesn't matter */
+var fun1 = function () {
+  // let & const doesn't work
+  console.log("In function expression");
+};
+
+function fun1() {
+  console.log("In function declaration");
+}
+/****/
+
+fun1(); // function expression
+/**
+ * Precedence: Function expressions can override
+ * function declarations with the same name within a scope.
+ */
+
+let variable = 0;
+
+const p = new Promise((resolve, reject) => resolve("hello")).then(console.log);
+
+const pp = new Promise((resolve, reject) => resolve(++variable)).then(
+  console.log(variable)
+);
+
+console.log(++variable); // 1 2
+console.log("Here"); // Here hello
+
+let i = 0; // with var as well, same result
+
+Promise.resolve(++i) // synchronous operation
+  .then(console.log); // asynchornous operation, take value from resolved method 1
+
+console.log(++i); // 2
+// 2 1
+
+function sumi(i) {
+  function sumj(j) {
+    i += j;
+    console.log(i);
+    return sumi;
+  }
+  return sumj;
+}
+
+sumi(1)(10)(12)(2)(90);
