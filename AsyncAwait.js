@@ -11,7 +11,7 @@ async function asyncFun() {
 }
 
 async function asyncFun1() {
-  return new Promise((res, rej) => res("done")); // it can return Promise (no wrapping of Promise)
+  return new Promise((res, rej) => res("done")); // it can return Promise directly (no wrapping of Promise)
 }
 
 console.log(asyncFun()); // Promise

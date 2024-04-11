@@ -1,4 +1,8 @@
 /**
+ * Higher Order Functions exists to asist other functions
+ */
+
+/**
  * Functional Programming
  * divided a larger function into smaller functions
  * each function has smaller unit of work to perform
@@ -67,12 +71,12 @@ console.log(max);
  * d = array
  */
 
-// start from second index (i = 1) and acc is first index element (i = 0)
+// current (20) start from second index (i = 1) and acc (10) is first index element (i = 0)
 radius.reduce((a, b, c, d) => {
   console.log(a, b, c, d);
 });
 
-// start from first index (i = 0) and acc is at first index (i = 0)
+// current (10) start from first index (i = 0) and acc is 0
 radius.reduce((a, b, c, d) => {
   console.log(a, b, c, d);
 }, 0);

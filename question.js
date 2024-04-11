@@ -105,7 +105,7 @@ console.log(p1.name); // p1
 const p2 = Object.create(p1);
 
 console.log(p2); // {}
-console.log(p1.name); // p1
+console.log(p2.name); // p1
 
 // predict output
 
@@ -126,7 +126,10 @@ console.log(user1); //{name: 'Foo'}
 console.log(user1.name); // Foo
 user1.greet(); // Hello Foo
 
-fun1(); // function declaration
+// predict op
+
+fun1(); // function declaration // function declaration have precedence over function expression
+
 /**
  * Hoisting: Function declarations are hoisted, function expressions are not.
  */
@@ -143,6 +146,7 @@ function fun1() {
 /****/
 
 fun1(); // function expression
+
 /**
  * Precedence: Function expressions can override
  * function declarations with the same name within a scope.
@@ -167,13 +171,18 @@ Promise.resolve(++i) // synchronous operation
 console.log(++i); // 2
 // 2 1
 
-function sumi(i) {
-  function sumj(j) {
-    i += j;
-    console.log(i);
-    return sumi;
-  }
-  return sumj;
-}
+// Define output
 
-sumi(1)(10)(12)(2)(90);
+setTimeout(() => console.log(1))
+
+Promise.resolve().then(() => console.log(2))
+
+Promise.resolve().then(() => setTimeout(() => console.log(3)))
+
+new Promise(() => console.log(4))
+
+setTimeout(() => console.log(5))
+
+console.log(0)
+
+// 4 0 2 1 5 3

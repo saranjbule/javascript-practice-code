@@ -48,7 +48,7 @@ const multiply3 = multiply2.bind(this, 3);
 console.log(multiply3()); // 6
 console.log(multiply2(10)); // 20
 
-const multiplyX = multiply.bind(this, 10, 20, 30); // 600
+const multiplyX = multiply.bind(this, 10, 20, 30); // 6000
 console.log(multiplyX());
 
 const multiplyY = multiply.bind(this);

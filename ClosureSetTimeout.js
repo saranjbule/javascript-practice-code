@@ -5,6 +5,7 @@
 
 // before setTimeout closure function run, i value get updated with 6
 // as JS is synchronous single threaded language and it wait for NONE
+
 function f0() {
   for (var i = 0; i < 6; i++) {
     setTimeout(function () {

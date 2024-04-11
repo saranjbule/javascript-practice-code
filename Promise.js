@@ -40,7 +40,7 @@ const promiseObj = createOrder(cart);
 
 promiseObj
   .then(function (orderId) {
-    return proceedToPayment(orderId); // inorder to flow data below the chain add return
+    return proceedToPayment(orderId); // inorder to flow data below the chain always add return
   })
   .then(function (paymentId) {
     return orderSummary(paymentId);
@@ -106,5 +106,5 @@ console.log(p1);
 
 /**
  * - Promise.resolve() and Promise.reject() are synchronous in terms of creating and setting the Promise's state.
- * - The handling of the resolved/rejected value through .then() and .catch() is asynchronous.
+ * - The handling of the resolved/rejected value through .then() and .catch() are asynchronous.
  */

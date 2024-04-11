@@ -3,7 +3,7 @@ const x = [10, 20],
 let z = 11,
   p = 21;
 
-console.log(x, y, z, p);
+console.log(x, y, z, p); // [10, 20], 20, 11, 21
 
 // pass by assignment => pass by value + pass by reference
 // pass by value
@@ -18,17 +18,19 @@ function f1(arg) {
 }
 
 f(x);
-console.log(x);
-// [1, 2]
+console.log(x); // [10, 20]
 
 f1(x);
-console.log(x);
-// [30, 2]
-// [30, 2, 40]
+console.log(x); // [30, 20, 40]
+
+/**
+ * Falsy Values
+ */
 
 for (let i of [0, "", false, null, undefined, {}, []]) {
   console.log(i, Boolean(i));
 }
+
 /**
  * 0 false
  * "" false
@@ -45,7 +47,7 @@ const arrLength = [].length;
 console.log(objLength, Boolean(objLength)); // 0 false
 console.log(arrLength, Boolean(arrLength)); // 0 false
 
-console.log("A".charCodeAt(0)); // 65
+console.log("A".charCodeAt()); // 65 // default take 0 index
 console.log(String.fromCharCode(65)); // A
 
 const arr = [1, 2, 3];
@@ -62,11 +64,15 @@ const a = [1, 2, 3];
 d[a] = 120;
 d[10] = a;
 
-console.log(d);
+console.log(d); // {'1,2,3': 120, 10: [1, 2, 3]}
 
 const d1 = { 10: { 1: 100, 2: 200 } };
 d1[20] = { 1: 20, 3: 40 };
-console.log(d1);
+console.log(d1); // { 10: { 1: 100, 2: 200 }, 20: { 1: 20, 3: 40 }}
+
+/**
+ * Sorting
+ */
 
 const d2 = {
   10: "z",
@@ -77,6 +83,12 @@ const d2 = {
 const e = Object.entries(d2);
 console.log(e);
 // [[2, 'b'], [10, 'z'], [30, 'a']]
+
+console.log(Object.keys(d2));
+// [2, 10, 30]
+
+console.log(Object.values(d2));
+// ['b', 'z', 'a']
 
 const sortByKeys = (item1, item2) => item1[0] - item2[0];
 e.sort(sortByKeys);
