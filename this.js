@@ -1,6 +1,6 @@
 /**
  * this substitution
- * - if value of this keyword is undefined or null in non-strict mode
+ * - Whenever the value of this keyword is undefined or null in non-strict mode
  * - then value of this gets replaced with global object
  */
 
@@ -59,11 +59,11 @@ af();
 // strict => Global object
 // non-strict mode => Global object
 
-// this inside object method
 /**
  * Function inside object are called as method
  */
 
+// this inside object method
 const y = {
   a: "a",
 

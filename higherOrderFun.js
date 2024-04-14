@@ -12,7 +12,7 @@
 
 const radius = [10, 20, 30, 40, 50];
 
-// callback function
+// callback functions
 function areaCircle(r) {
   return Math.floor(Math.PI * r * r);
 }

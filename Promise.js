@@ -7,7 +7,7 @@
  *
  * - Promise State = Shows the state of a promise,
  * - initially it show pending state then it change to fullfilled or rejected state
- *   - Pending | Fullfilled | Rejected
+ *   - Pending => Fullfilled | Rejected
  *
  * - Promise Result = Used to store data returned by promise,
  * - initially it is undefined

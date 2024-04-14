@@ -1,6 +1,6 @@
 /**
  * Module design pattern
- * Module Design Pattern to encapsulate private variables and methods.
+ * Module Design Pattern to Encapsulate private variables and methods.
  * This helps in achieving data privacy and preventing them from being accessed from outside the module.
  */
 
@@ -80,7 +80,7 @@ oF();
 oF();
 
 /**
- * Data privacy/ Data hiding/ Encapsulation
+ * Data privacy/ Data hiding/ Abstraction
  */
 
 // Function 1:  Problem : variable a is global scope so anyone can alter variable a which result in unexpected outcome
