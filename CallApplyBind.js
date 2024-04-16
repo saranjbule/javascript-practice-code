@@ -54,16 +54,44 @@ console.log(multiplyX());
 const multiplyY = multiply.bind(this);
 console.log(multiplyY(5, 2, 1)); // 10
 
-
 /**
  * Pollyfill for bind : Browser fallback for bind method | if browser doesn't support bind method
  */
 
-Function.prototype.myBind = function (params) {
-  return this;
+const user = {
+  name: "saranj",
+  section: "A",
 };
 
-const getNameP3 = person1.getName.myBind(person2);
+function getDetail(address, grade, grade2) {
+  console.log(
+    `Name is ${this.name} + 
+    Section is ${this.section} +  
+    Address ${address} + 
+    G1 ${grade} + 
+    G2 ${grade2}`
+  );
+}
 
-console.log(getNameP3);
-getNameP3();
+const userGetDetail = getDetail.bind(user);
+userGetDetail("NGP", "Z", "p");
+
+/**
+ * this = function (userGetDetail)
+ * obj = object (user)
+ * args = array of arguments
+ */
+function myBind(obj) {
+  return (...args) => {
+    this.apply(obj, args);
+  };
+}
+
+Function.prototype.myBind = myBind;
+
+const userGetDetail2 = getDetail.myBind(user);
+
+userGetDetail2("bgl", "A", "q");
+userGetDetail2("jmu", "B", "r");
+userGetDetail2("kol", "C", "s");
+userGetDetail2("punjab", "D", "t");
