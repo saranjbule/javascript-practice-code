@@ -1,10 +1,10 @@
 /**
  * Callback Functions
  * - Function are first class citizens in javascript
- * 
+ *
  * A programming language is said to have First-class functions
- * if functions in that language are treated just like other variables.
- * 
+ * - if functions in that language are treated just like other variables.
+ *
  * Properties of First Class Citizen, functions
  * - function can passed as an arguments to another function
  * - function can be returned from another function
@@ -12,7 +12,7 @@
  * - function can be stored into objects
  *
  * - this function are called as callback function
- * 
+ *
  * - with the help of callback functions we can perform asynchronous operation in javascript
  */
 
@@ -59,11 +59,11 @@ button.addEventListener("click", bC);
  *
  * - Problem 2: Inversion of control
  *   - loose control of our program
- * 
+ *
  *   - we expect a function to call the callback function for us
  *   - (we have given all the control of a callback to that function)
  *   - (we are blindly trusting that function to call the callback and return result)
- * 
+ *
  *   - Unexpected result may occurs
  *   - callback function might never get call
  *   - callback function get call twice

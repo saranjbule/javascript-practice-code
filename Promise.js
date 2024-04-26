@@ -68,7 +68,7 @@ const result = fetch(API).then((data) => {
   console.log(data);
 });
 
-console.log(result); // show promise in pending state as JS waits for None
+console.log(result); // shows promise in pending state as JS waits for None
 
 async function getResult() {
   return await fetch(API);

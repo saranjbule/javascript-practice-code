@@ -76,7 +76,7 @@ handlePromiseNew1();
 
 // hello # quickly
 // i am done # after 10sec
-// i am done # with above msg after 10sec
+// i am done # just after above statement
 
 async function handlePromiseNew1() {
   const result = await p;
@@ -87,7 +87,7 @@ async function handlePromiseNew1() {
 }
 
 // i am done # after 10sec
-// i am done 2 # just after that
+// i am done 2 # just after above statement
 
 async function handlePromiseNew1() {
   const result = await p1;
@@ -104,17 +104,17 @@ const API = "https://api.github.com/users/saranjbule";
 
 async function getData() {
   const respose = await fetch(API);
-  console.log(respose)
+  console.log(respose);
   const data = await respose.json();
   console.log(data);
 }
 
 getData();
-// without await at line 108 promise
-// with await at line 108 json data
+// without await at line 108 => promise
+// with await at line 108 => json data
 
 /**
  * handling erros
  * in promises - by attaching failure (.catch()) callbacks
- * in async await - by using try catch block or by attaching failure callback to aysnc function as it returned promise object
+ * in async await - by using try catch block or by attaching failure callback to aysnc function as it returns promise object
  */

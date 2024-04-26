@@ -173,16 +173,32 @@ console.log(++i); // 2
 
 // Define output
 
-setTimeout(() => console.log(1))
+setTimeout(() => console.log(1));
 
-Promise.resolve().then(() => console.log(2))
+Promise.resolve().then(() => console.log(2));
 
-Promise.resolve().then(() => setTimeout(() => console.log(3)))
+Promise.resolve().then(() => setTimeout(() => console.log(3)));
 
-new Promise(() => console.log(4))
+new Promise(() => console.log(4));
 
-setTimeout(() => console.log(5))
+setTimeout(() => console.log(5));
 
-console.log(0)
+console.log(0);
 
 // 4 0 2 1 5 3
+
+// Define output
+
+setTimeout(() => console.log(1));
+
+Promise.resolve().then(() => console.log(2));
+
+Promise.resolve(console.log(6)).then(() => setTimeout(() => console.log(3)));
+
+new Promise(() => console.log(4));
+
+setTimeout(() => console.log(5));
+
+console.log(0);
+
+// 6 4 0 2 1 5 3

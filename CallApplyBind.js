@@ -1,11 +1,13 @@
 /**
- * Value of this keyword can be tweak by call, apply and bind methods
- */
-
-/**
+ * Function borrowing methods
+ *
  * CALL - is used for function borrowing
  * APPLY - is same as call (function borrowing), the only difference is the way of passing the arguments (array of arguments)
  * BIND - is used for binding a method with an object, which can be invoked/ used later
+ */
+
+/**
+ * Value of this keyword can be tweak by call, apply and bind methods
  */
 
 const person1 = {
@@ -16,24 +18,24 @@ const person1 = {
   },
 };
 
-person1.getName(); // saranj bule
+person1.getName(); // saranj bule nowhere
 
 const person2 = {
   firstName: "xxx",
   lastName: "yyy",
 };
 
-person1.getName.call(person2); // xxx yyy
+person1.getName.call(person2); // xxx yyy nowhere
 
-person1.getName.call(person2, "sausar");
+person1.getName.call(person2, "sausar"); // xxx yyy sausar
 
-person1.getName.apply(person2, ["somewhere"]);
+person1.getName.apply(person2, ["somewhere"]); // xxx yyy somewhere
 
 const getNameP2 = person1.getName.bind(person2);
 
 getNameP2(); // xxx yyy nowhere
 
-console.log(getNameP2); // f
+console.log(getNameP2); // function getName with this keyword pointing to person2
 
 /**
  * Currying using bind method

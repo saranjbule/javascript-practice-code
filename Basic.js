@@ -66,9 +66,34 @@ d[10] = a;
 
 console.log(d); // {'1,2,3': 120, 10: [1, 2, 3]}
 
+a.push(10);
+console.log(d, a); // {'1,2,3': 120, 10: [1, 2, 3, 10]} [ 1, 2, 3, 10 ]
+// for keys variable a reference is not stored but string conversion is stored
+// for values variable a reference is stored
+
+console.log(d[a]); // undefined
+console.log(d["1,2,3"]); // 120
+
 const d1 = { 10: { 1: 100, 2: 200 } };
 d1[20] = { 1: 20, 3: 40 };
 console.log(d1); // { 10: { 1: 100, 2: 200 }, 20: { 1: 20, 3: 40 }}
+
+d1[d] = "val";
+console.log(d1); // {10: {…}, 20: {…}, [object Object]: 'val'}
+
+const i = 1,
+  s = "a",
+  o = [1, 2],
+  d3 = { 1: "s" };
+
+const dict = {
+  [i]: "v1",
+  [s]: "v2",
+  [o]: "v3",
+  [JSON.stringify(d3)]: "v4",
+};
+
+console.log(dict); // { '1': 'v1', a: 'v2', '1,2': 'v3', '{"1":"s"}': 'v4' }
 
 /**
  * Sorting

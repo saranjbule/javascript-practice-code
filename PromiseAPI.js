@@ -12,7 +12,7 @@
 // to get the final result array total time will be 8s max(5s, 2s, 8s)
 // as Promise.all() wait for all of them to resolved
 
-// if any one of the promise gets rejected Promise.all() will throws the error of that promise instantly
+// if any one of the promise gets rejected in-between Promise.all() will throws the error of that promise instantly
 // it will not wait for other promises to get their result (settle [resolved or rejected])
 
 // whenever the promises are executed we can not terminate the promise in between, once initiated
