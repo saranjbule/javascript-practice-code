@@ -7,7 +7,7 @@
  */
 
 /**
- * Value of this keyword can be tweak by call, apply and bind methods
+ * Value of `this` keyword can be tweak by call, apply and bind methods
  */
 
 const person1 = {

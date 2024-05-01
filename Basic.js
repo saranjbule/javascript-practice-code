@@ -51,10 +51,11 @@ console.log("A".charCodeAt()); // 65 // default take 0 index
 console.log(String.fromCharCode(65)); // A
 
 const arr = [1, 2, 3];
-const obj = { 10: "a", 20: "c" };
 
 console.log(arr.includes(2)); // true
 console.log(arr.includes(20)); // false
+
+const obj = { 10: "a", 20: "c" };
 
 console.log(arr, Array.isArray(arr)); // true
 console.log(obj, Array.isArray(obj)); // false
@@ -68,8 +69,8 @@ console.log(d); // {'1,2,3': 120, 10: [1, 2, 3]}
 
 a.push(10);
 console.log(d, a); // {'1,2,3': 120, 10: [1, 2, 3, 10]} [ 1, 2, 3, 10 ]
-// for keys variable a reference is not stored but string conversion is stored
-// for values variable a reference is stored
+// for keys variable `a` reference is not stored but string conversion is stored
+// for values variable `a` reference is stored
 
 console.log(d[a]); // undefined
 console.log(d["1,2,3"]); // 120

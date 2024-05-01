@@ -70,5 +70,5 @@ p(); // Reference Error: p is not defined as function p is stored inside c and n
  * - Special keyword that is used to denote the variable before initalization (whose value is yet to set) [some memory is allocated]
  *
  * Not defined
- * - Unable to locate a variable with some name in execution context [no memory is allocated]
+ * - Unable to locate a variable within execution context [no memory is allocated]
  */

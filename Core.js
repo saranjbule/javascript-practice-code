@@ -1,5 +1,6 @@
 /**
  * Javascript is loosely, weakly, dynamically typed language
+ * Javascript is synchronous and single threaded language
  */
 
 // Loosely - a variable can hold multiple types of data type

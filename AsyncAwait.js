@@ -31,7 +31,7 @@ function handlePromiseOld() {
 
 handlePromiseOld();
 // in old
-// Resolved Promise
+// Resolved Promise # after promise resolved
 
 // new way
 async function handlePromiseNew() {
@@ -115,6 +115,7 @@ getData();
 
 /**
  * handling erros
- * in promises - by attaching failure (.catch()) callbacks
- * in async await - by using try catch block or by attaching failure callback to aysnc function as it returns promise object
+ * in promises - by attaching failure (.catch()) callbacks method
+ * in async await - by using try catch block or
+ *                  by attaching failure callback method to aysnc function as it returns promise object
  */
