@@ -171,6 +171,14 @@ Promise.resolve(++i) // synchronous operation
 console.log(++i); // 2
 // 2 1
 
+let ii = 0; 
+
+Promise.resolve(ii++)
+  .then(console.log); // 0
+
+console.log(++ii); // 2
+// 2 0
+
 // Define output
 
 setTimeout(() => console.log(1));

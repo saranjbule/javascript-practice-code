@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>x</title>
-    </head>
-    <body>
-        <button id="button">Click</button>
-        <button id="start">start</button>
-        <button id="stop">stop</button>
-        <input id="ip" type="text" onkeyup="getResult()"/>
-        <script src="./question.js"></script>
-    </body>
+  <head>
+    <title>x</title>
+    <style>
+      div {
+        margin: 5px;
+      }
+
+      #child,
+      #child1,
+      #child2,
+      #child3 {
+        height: 100px;
+        width: 100px;
+        background-color: blueviolet;
+      }
+
+      #parent {
+        height: 200px;
+        width: 200px;
+        background-color: orange;
+      }
+
+      #grandparent {
+        height: 300px;
+        width: 300px;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button">Click</button>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+    <input id="ip" type="text" />
+
+    <!-- <div id="grandparent">
+      <div id="parent">
+        <div id="child"></div>
+      </div>
+    </div> -->
+
+    <div id="grandparent">
+      <div id="child1"></div>
+      <div id="child2"></div>
+      <div id="child3"></div>
+    </div>
+
+    <div id="parent">
+      <input type="text" id="name" data-uppercase />
+      <input type="text" id="pan" data-uppercase />
+      <input type="text" id="address" />
+    </div>
+
+    <script src="./Debouncing.js"></script>
+  </body>
 </html>
