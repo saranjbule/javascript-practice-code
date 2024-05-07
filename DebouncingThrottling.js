@@ -1,7 +1,7 @@
 /**
  * Debouncing and Throttling
  *
- * These are optimizing techniques it increase the performance of web app
+ * These are optimizing techniques to increase the performance of web app
  *
  * It allows to control the rate at which code is executed,
  * and reduce the number of times it is called
@@ -13,7 +13,7 @@
  *
  * Examples-
  *  - seach bar : Debouncing (make api call after each pause)
- *  - shooting game : throttling (for each reload)
+ *  - shooting game : throttling (for each reload after fixed time)
  */
 
 let t1 = 0;

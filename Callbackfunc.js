@@ -22,7 +22,7 @@ const buttonClicked = () => {
   return () => {
     count++;
     console.log("button click", count); // 1 2 3 4 ... with each click
-  }; // callback function
+  }; // callback function | closure
 };
 
 function bClick() {
@@ -33,7 +33,7 @@ function bClick() {
     console.log("button click", b); // 1 2 3 4 ... with each click
   }
 
-  return bClickIncre; // callback function
+  return bClickIncre; // callback function | closure
 }
 
 const button = document.getElementById("button");
@@ -42,8 +42,9 @@ button.addEventListener("click", bC);
 
 /**
  * Event Listerners
- * - event listeners are heavy as it forms closures and closure over consume memory i.e., Memory Leaks
- * - good practice is to remove event listeners after its use
+ * - event listeners are heavy as it forms closures
+ * - closure over consume memory i.e., Memory Leaks
+ * - good practice is to remove event listeners after it's use
  * - as all unused memeory get garbage collected by garbage collector
  */
 

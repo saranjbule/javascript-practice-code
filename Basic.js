@@ -69,10 +69,11 @@ console.log(d); // {'1,2,3': 120, 10: [1, 2, 3]}
 
 a.push(10);
 console.log(d, a); // {'1,2,3': 120, 10: [1, 2, 3, 10]} [ 1, 2, 3, 10 ]
-// for keys variable `a` reference is not stored but string conversion is stored
-// for values variable `a` reference is stored
+// for keys in variable `a` reference is not stored but string conversion is stored
+// for values in variable `a` reference is stored
 
 console.log(d[a]); // undefined
+console.log(d[[1, 2, 3]]); // 120
 console.log(d["1,2,3"]); // 120
 
 const d1 = { 10: { 1: 100, 2: 200 } };
@@ -95,6 +96,9 @@ const dict = {
 };
 
 console.log(dict); // { '1': 'v1', a: 'v2', '1,2': 'v3', '{"1":"s"}': 'v4' }
+
+console.log(dict[1]); // v1
+console.log(dict["1"]); // v1
 
 /**
  * Sorting

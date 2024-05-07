@@ -80,10 +80,12 @@ oF();
 oF();
 
 /**
- * Data privacy/ Data hiding/ Abstraction
+ * Data privacy/ Data hiding
  */
 
-// Function 1:  Problem : variable a is global scope so anyone can alter variable a which result in unexpected outcome
+// Function 1: Problem
+// variable `a` is global scope so anyone can alter variable `a`
+// which result in unexpected outcome
 var a = 10; // global scope
 function increment() {
   a++;
@@ -104,7 +106,7 @@ function y() {
 }
 
 // console.log(count); // Reference Error: count is not defined
-// count is not accessible at globally scope
+// count is not accessible outside of function y (at globally scope)
 
 counter = y();
 counter(); // 1

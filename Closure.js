@@ -27,6 +27,7 @@ const f = x();
 console.log(f); // function y
 
 // function x no longer exists but function y still remember it's lexical scope
+// (i.e., variable declare inside function scope of x)
 for (let i = 0; i < 10; i++) {
   f(); // 10 11 12
 }
@@ -35,10 +36,8 @@ for (let i = 0; i < 10; i++) {
  * Disadvantages of Closure
  * - over consumption of memory
  * - varaible defined inside the closure are not automatically garbage collected
- * - which result in memory leaks
- * - but some garbage collectors automatically removed unreferenced/ unused variables
+ * - which result's in memory leaks
  */
-
 
 /**
  * Uses of Closure

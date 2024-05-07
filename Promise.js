@@ -35,6 +35,7 @@ API.createOrder(cart, function (orderId) {
 // a callback function is attach to promise object with
 // successful callback method = .then()
 // failure callback method = .catch()
+// method always get executed = .finally()
 
 const promiseObj = createOrder(cart);
 
