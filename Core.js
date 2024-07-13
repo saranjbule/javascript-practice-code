@@ -9,7 +9,7 @@
 var x;
 console.log(x, typeof x); // undefined undefined
 
-x = "saranj";
+x = 'saranj';
 console.log(x, typeof x); // saranj string
 
 x = [1, 2];
@@ -25,14 +25,14 @@ console.log(x, typeof x); // undefined undefined
 // Coercion
 
 // Implicit Coercion
-a = 10 + "0";
+a = 10 + '0';
 console.log(a, typeof a); // 100 string
 
 a = a - 50;
 console.log(a, typeof a); // 50 number
 
 // Explicit Coercion
-a = "";
+a = '';
 a = Number(a);
 console.log(a, typeof a); // 0 number
 

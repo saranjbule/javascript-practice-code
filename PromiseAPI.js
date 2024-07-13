@@ -1,7 +1,7 @@
 /**
  * Promise.all()
  * - to make multiple parallel API calls and get the result
- * - to handle multple Promises together
+ * - to handle multiple Promises together
  * - take array of promises (iterable) as input
  * - fail fast technique | ALL or NONE
  */

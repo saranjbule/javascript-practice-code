@@ -20,7 +20,7 @@ var x = 3;
 
 /** 
 let and const variable declarations are hosted
-but they are hoisted differently than var keyword they are in
+but they are hoisted differently than var keyword they reside in
 Temporal Dead Zone (not attached to window object)
 
 Temporal Dead Zone is time 
@@ -34,27 +34,34 @@ till it get initialized with some value.
 const y = 3;
 let z = 3;
 
+/**
+ * Types of functions declarations
+ */
+
+// anonymous function (function without name)
+// () => {}
+// function () {}
+
 // function declaration/ function statement
 function greet(param) {
-  console.log("Hello", param); // saranj is passed to greet as a parameter which is local to the function
+  console.log('Hello', param); // saranj is passed to greet as a parameter which is local to the function
 }
 
-greet("saranj"); // saranj is argument
+greet('saranj'); // saranj is argument
 
 // Arrow function
 var a = () => {
-  console.log("hi from a");
+  console.log('hi from a');
 };
 
 // function expression
 var b = function () {
-  // anonymous function (function without name)
-  console.log("hi from b");
+  console.log('hi from b');
 };
 
 // name function expression
 var c = function p() {
-  console.log("hi from p");
+  console.log('hi from p');
   console.log(p); // function p
 };
 
@@ -67,7 +74,8 @@ p(); // Reference Error: p is not defined as function p is stored inside c and n
 
 /**
  * Undefined
- * - Special keyword that is used to denote the variable before initalization (whose value is yet to set) [some memory is allocated]
+ * - Special keyword that is used to denote the variable before initalization
+ * - whose value is yet to set [some memory is allocated]
  *
  * Not defined
  * - Unable to locate a variable within execution context [no memory is allocated]

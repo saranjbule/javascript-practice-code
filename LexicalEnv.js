@@ -1,11 +1,11 @@
 /**
  * whenever an Execution Context is created a Lexical Enviornment is also created.
- * Lexical env is Local memory along with the lexical env of its parent
+ * Lexical env is Local memory along with the reference to the parent lexical env
  * Lexical Env = local memory + lexical env of parent
- * 
+ *
  * function b is lexical inside function a
- * function a is lexical inside global scope 
- * 
+ * function a is lexical inside global scope
+ *
  * Chain of Lexical env is Scope Chain
  */
 
@@ -18,5 +18,5 @@ function a() {
 }
 
 a(); // undefined
-var x = 10; 
+var x = 10;
 a(); // 10

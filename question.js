@@ -1,8 +1,8 @@
-const startButton = document.getElementById("start");
-const stopButton = document.getElementById("stop");
+const startButton = document.getElementById('start');
+const stopButton = document.getElementById('stop');
 
-startButton.addEventListener("click", startInterval);
-stopButton.addEventListener("click", stopInterval);
+startButton.addEventListener('click', startInterval);
+stopButton.addEventListener('click', stopInterval);
 
 // component to show current time to user
 
@@ -23,8 +23,8 @@ function stopInterval() {
 console.log(1);
 function foo() {
   console.log(2);
-  setTimeout(() => console.log("3/1"), 1000);
-  setTimeout(() => console.log("3/0"), 0);
+  setTimeout(() => console.log('3/1'), 1000);
+  setTimeout(() => console.log('3/0'), 0);
   console.log(4);
 }
 console.log(5);
@@ -35,7 +35,7 @@ console.log(6);
 
 // QUE: 2
 const person = {
-  name: "saranj",
+  name: 'saranj',
   print: () => {
     console.log(this.name); // undefined
     // arrow function do not have their own this they provide reference of this with surrounding env (window)
@@ -67,24 +67,24 @@ print();
 // Everything in javascript is an object
 
 function x(para) {
-  const n = "saranj";
+  const n = 'saranj';
   const age = 24;
   console.log(n, para);
 }
 
-x("bule"); // saranj bule
+x('bule'); // saranj bule
 console.log(x); // f
 console.log(x.name); // x // build-in method get the name of function
 console.log(x.age); // undefined // age is not accessible outside
 
 // function have predefined properties - name, length, prototype ...
-x.category = "xx"; // attaching a user defined property (category) to the JavaScript object (i.e., function)
+x.category = 'xx'; // attaching a user defined property (category) to the JavaScript object (i.e., function)
 console.log(x.category); // xx
 
-x.name = "newName"; // do not alter in-build property
+x.name = 'newName'; // do not alter in-build property
 console.log(x.name); // x
 
-x.category = "yy"; // can alter user-defined property
+x.category = 'yy'; // can alter user-defined property
 console.log(x.category); // yy
 
 console.log(x.prototype); // constructor object
@@ -92,7 +92,7 @@ console.log(x.prototype); // constructor object
 // The Object.create() method creates a new object using the prototype of the given object.
 
 const p1 = {
-  name: "p1",
+  name: 'p1',
   getName: function () {
     console.log(this.name);
   },
@@ -121,14 +121,16 @@ const userFunctionStore = {
   },
 };
 
-const user1 = createUser("Foo");
+const user1 = createUser('Foo');
 console.log(user1); //{name: 'Foo'}
 console.log(user1.name); // Foo
 user1.greet(); // Hello Foo
 
 // predict op
 
-fun1(); // function declaration // function declaration have precedence over function expression
+fun1(); // function declaration
+console.log(fun1); // fn (function declaration)
+// function declaration have precedence over function expression
 
 /**
  * Hoisting: Function declarations are hoisted, function expressions are not.
@@ -137,15 +139,18 @@ fun1(); // function declaration // function declaration have precedence over fun
 /** order doesn't matter */
 var fun1 = function () {
   // let & const doesn't work
-  console.log("In function expression");
+  console.log('In function expression');
 };
 
 function fun1() {
-  console.log("In function declaration");
+  console.log('In function declaration');
 }
 /****/
 
-fun1(); // function expression
+fun1(); // function expression 
+// function expression overrides function declaration variable in execution context
+console.log(fun1); // fn (function expression)
+
 
 /**
  * Precedence: Function expressions can override
@@ -154,14 +159,14 @@ fun1(); // function expression
 
 let variable = 0;
 
-const p = new Promise((resolve, reject) => resolve("hello")).then(console.log);
+const p = new Promise((resolve, reject) => resolve('hello')).then(console.log);
 
 const pp = new Promise((resolve, reject) => resolve(++variable)).then(
   console.log(variable)
 );
 
 console.log(++variable); // 1 2
-console.log("Here"); // Here hello
+console.log('Here'); // Here hello
 
 let i = 0; // with var as well, same result
 
@@ -171,10 +176,9 @@ Promise.resolve(++i) // synchronous operation
 console.log(++i); // 2
 // 2 1
 
-let ii = 0; 
+let ii = 0;
 
-Promise.resolve(ii++)
-  .then(console.log); // 0
+Promise.resolve(ii++).then(console.log); // 0
 
 console.log(++ii); // 2
 // 2 0

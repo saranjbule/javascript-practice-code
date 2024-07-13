@@ -10,7 +10,7 @@ const module = () => {
 
   // private method
   const c = (x) => {
-    console.log("c", x);
+    console.log('c', x);
   };
 
   // public attribute
@@ -19,7 +19,7 @@ const module = () => {
   // public method
   const d = () => {
     c(a); // getter/ accessor
-    console.log("d");
+    console.log('d');
   };
 
   return { b, d };
@@ -67,10 +67,10 @@ const onceFuc = () => {
   let ran = true;
   return () => {
     if (ran) {
-      console.log("Done");
+      console.log('Done');
       ran = false;
     } else {
-      console.log("Already Done");
+      console.log('Already Done');
     }
   };
 };
@@ -84,7 +84,7 @@ oF();
  */
 
 // Function 1: Problem
-// variable `a` is global scope so anyone can alter variable `a`
+// variable `a` is in global scope so anyone can alter variable `a`
 // which result in unexpected outcome
 var a = 10; // global scope
 function increment() {
@@ -137,9 +137,9 @@ const memoization = () => {
 };
 
 const cM = memoization();
-cM("a", 1); // {'a': 1}
-cM("x", 10); // {'a': 1, 'x': 10}
-cM("a", 3); // {'a': 4, 'x': 10}
+cM('a', 1); // {'a': 1}
+cM('x', 10); // {'a': 1, 'x': 10}
+cM('a', 3); // {'a': 4, 'x': 10}
 
 /**
  * Maintaining State in Async World
@@ -148,8 +148,12 @@ cM("a", 3); // {'a': 4, 'x': 10}
 const asynCounter = function () {
   let count = 0;
   return () => {
-    setInterval(() => {
-      console.log(count++);
+    const interval = setInterval(() => {
+      if (count < 5) {
+        console.log(count++);
+      } else {
+        clearInterval(interval);
+      }
     }, 1000);
   };
 };

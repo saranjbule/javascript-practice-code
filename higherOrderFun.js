@@ -1,5 +1,5 @@
 /**
- * Higher Order Functions exists to asist other functions
+ * Higher Order Functions exists to assist other functions
  */
 
 /**
@@ -87,27 +87,27 @@ radius.reduce((a, b, c, d) => {
 
 const user = [
   {
-    name: "xxx",
+    name: 'xxx',
     age: 24,
     x: false,
   },
   {
-    name: "yyy",
+    name: 'yyy',
     age: 2,
     x: false,
   },
   {
-    name: "zzz",
+    name: 'zzz',
     age: 10,
     x: true,
   },
   {
-    name: "ppp",
+    name: 'ppp',
     age: 21,
     x: false,
   },
   {
-    name: "qqq",
+    name: 'qqq',
     age: 10,
     x: false,
   },

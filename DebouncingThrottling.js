@@ -12,7 +12,7 @@
  * Throtting occurs after a regular time interval
  *
  * Examples-
- *  - seach bar : Debouncing (make api call after each pause)
+ *  - search bar : Debouncing (make api call after each pause)
  *  - shooting game : throttling (for each reload after fixed time)
  */
 

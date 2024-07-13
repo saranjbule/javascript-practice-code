@@ -6,30 +6,30 @@
  * Event capturing also know as event trickling
  */
 
-const grandparent = document.getElementById("grandparent");
-const parent = document.getElementById("parent");
-const child = document.getElementById("child");
+const grandparent = document.getElementById('grandparent');
+const parent = document.getElementById('parent');
+const child = document.getElementById('child');
 
 grandparent.addEventListener(
-  "click",
+  'click',
   function () {
-    console.log("Grand Parent");
+    console.log('Grand Parent');
   },
   false // true capturing
 );
 
 parent.addEventListener(
-  "click",
+  'click',
   function () {
-    console.log("Parent");
+    console.log('Parent');
   },
   false // false bubbling
 );
 
 child.addEventListener(
-  "click",
+  'click',
   function () {
-    console.log("Child");
+    console.log('Child');
   },
   false // true capturing
 );
@@ -56,4 +56,4 @@ Life Cycle of Events Listeners
 2. then Bubbling Cycle => all bubbling event gets executed
 `;
 
-// e.stopPropagation() // to stop propagation of DOM elements
+// e.stopPropagation() // to stop propagation of event in DOM elements
