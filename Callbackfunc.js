@@ -51,7 +51,7 @@ button.addEventListener("click", bC);
 /**
  * Callback Problems
  * - Problem 1: Callback Hell
- *   - callback inside callback inside callback (nested callback)
+ *   - callback inside callback inside callback (series of nested callback)
  *   - Pyramid of DOOM structure
  *   - code starts growing Horizonatally
  *

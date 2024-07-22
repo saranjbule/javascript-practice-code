@@ -159,10 +159,10 @@ console.log(fun1); // fn (function expression)
 
 let variable = 0;
 
-const p = new Promise((resolve, reject) => resolve('hello')).then(console.log);
+const p = new Promise((resolve, reject) => resolve('hello')).then(console.log); // asynchronous operation
 
 const pp = new Promise((resolve, reject) => resolve(++variable)).then(
-  console.log(variable)
+  console.log(variable) // synchronous operation 
 );
 
 console.log(++variable); // 1 2

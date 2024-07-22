@@ -23,6 +23,19 @@ const promise = new Promise((resolve, reject) => {
   }, 5000);
 });
 
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(resolve('Resolved Promise'), 5000);
+});
+
+// In promise1, the resolve('Resolved Promise') is called immediately,
+// not after the delay. This happens because resolve('Resolved Promise') is an immediate function call that returns undefined,
+// and undefined is passed as the first argument to setTimeout. The code effectively becomes:
+
+// setTimeout(undefined, 5000);
+
+// This means the promise is resolved immediately with the value 'Resolved Promise',
+// and the setTimeout does nothing after 5 seconds because it received undefined as the function to execute.
+
 // old way
 function handlePromiseOld() {
   promise.then((res) => console.log(res));
@@ -110,8 +123,8 @@ async function getData() {
 }
 
 getData();
-// without await at line 108 => promise
-// with await at line 108 => json data
+// without await at line 121 => promise
+// with await at line 121 => json data
 
 /**
  * handling erros

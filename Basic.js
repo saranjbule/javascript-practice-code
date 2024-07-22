@@ -29,10 +29,11 @@ const arrayZ = structuredClone(array); // or use loadash _clonedeep()
 console.log(array == arrayZ, array[2] == arrayZ[2]); // false false
 
 /**
- * Unpacking
+ * Unpacking / Destructuring
  */
 
 const [x0 = 'x0', x1 = 'x1', x2 = 'x2'] = xx;
+// x0 = 'x0' is alias
 console.log(x0, x1, x2); // [1, 100, 'x2']
 
 // const [i0, i1] = 1;
@@ -49,8 +50,11 @@ console.log(az, bz); // 1 [2, 3]
 
 // ... always return array of items
 
-const [ay, by] = { 1: 'a', 2: 'b', 3: 'c', 4: 'd' };
-console.log(ay, by); // TypeError: {(intermediate value)} is not iterable
+// const [ay, by] = { 1: 'a', 2: 'b', 3: 'c', 4: 'd' };
+// console.log(ay, by); // TypeError: {(intermediate value)} is not iterable
+
+const {xxx, yyy, ...rest} = { xxx: 'a', yyy: 'b', 3: 'c', 4: 'd' };
+console.log(xxx, yyy, rest) // a b {3: 'c', 4: 'd'}
 
 console.log(2 ** 10); // 1024
 
@@ -61,7 +65,7 @@ console.log(Number(null)); // 0
 console.log(Number('')); // 0
 
 /**
- * Binary <-> Number
+ * Binary <-> Decimal
  */
 
 console.log(parseInt('100', 2)); // 4
@@ -69,11 +73,11 @@ console.log(parseInt(100, 2)); // 4
 
 const number = 42;
 
-// Number to binary
+// Decimal to binary
 const binary = number.toString(2);
 console.log(`Number to binary: ${number} -> ${binary}`); // Output: '101010'
 
-// Binary to number
+// Binary to Decimal
 const numberBack = parseInt(binary, 2);
 console.log(`Binary to number: ${binary} -> ${numberBack}`); // Output: 42
 
@@ -86,6 +90,7 @@ const x = [10, 20];
 // pass by value
 function f(arg) {
   arg = [1, 2]; // arg is now local to f which create new local binding with [1, 2]
+  arg.push(40);
 }
 
 // pass by reference

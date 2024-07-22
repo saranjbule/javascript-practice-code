@@ -37,7 +37,7 @@
 /**
  * Promise.any()
  * - Similar to Promise.race() but seeking for first success
- * - First one to ressolved first gets return to the result set
+ * - First one to resolved first gets return to the result set
  * - if every promise get rejected then result will be AGGREGATE ERROR i.e., [err1, err2, err3] (err.errors)
  */
 
