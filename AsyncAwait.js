@@ -132,3 +132,14 @@ getData();
  * in async await - by using try catch block or
  *                  by attaching failure callback method to aysnc function as it returns promise object
  */
+
+/**
+* fetch(): This function sends a network request and returns a Promise,
+*          that resolves to the Response object once the request completes.
+
+* Response.json(): This method reads the response body to completion and parses it as JSON.
+                   It returns a Promise that resolves to the parsed JSON data.
+
+* Because parsing the response body can be time-consuming, especially for large responses,
+* the .json() method is designed to return a Promise rather than blocking the main thread.
+*/
