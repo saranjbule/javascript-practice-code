@@ -39,6 +39,7 @@ const person = {
   print: () => {
     console.log(this.name); // undefined
     // arrow function do not have their own this they provide reference of this with surrounding env (window)
+    // borrow this from their surrouding env
     // hence window do not have any name property (window.name) into it
   },
   print1: function () {
@@ -77,11 +78,13 @@ console.log(x); // f
 console.log(x.name); // x // build-in method get the name of function
 console.log(x.age); // undefined // age is not accessible outside
 
+console.log(x.length) // 1 | number of parameters (non-argument parameters)
+
 // function have predefined properties - name, length, prototype ...
 x.category = 'xx'; // attaching a user defined property (category) to the JavaScript object (i.e., function)
 console.log(x.category); // xx
 
-x.name = 'newName'; // do not alter in-build property
+x.name = 'newName'; // can not alter in-build property
 console.log(x.name); // x
 
 x.category = 'yy'; // can alter user-defined property
@@ -147,10 +150,9 @@ function fun1() {
 }
 /****/
 
-fun1(); // function expression 
+fun1(); // function expression
 // function expression overrides function declaration variable in execution context
 console.log(fun1); // fn (function expression)
-
 
 /**
  * Precedence: Function expressions can override
@@ -162,7 +164,7 @@ let variable = 0;
 const p = new Promise((resolve, reject) => resolve('hello')).then(console.log); // asynchronous operation
 
 const pp = new Promise((resolve, reject) => resolve(++variable)).then(
-  console.log(variable) // synchronous operation 
+  console.log(variable) // synchronous operation
 );
 
 console.log(++variable); // 1 2

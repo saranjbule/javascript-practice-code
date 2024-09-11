@@ -41,9 +41,13 @@ const result = arr.sort((a1, a2) => {
 
   if (t1 === 'number' && t2 === 'number') {
     return a1 - a2;
-  } else if (t1 === 'string' && t2 === 'string') {
+  }
+
+  if (t1 === 'string' && t2 === 'string') {
     return a1.charCodeAt(0) - a2.charCodeAt(0);
-  } else if (t1 === 'number') {
+  }
+
+  if (t1 === 'number') {
     return -1;
   }
 

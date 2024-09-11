@@ -21,6 +21,9 @@ console.log(x, typeof x); // 10 number
 x = undefined; // Bad practice
 console.log(x, typeof x); // undefined undefined
 
+x = null;
+console.log(x, typeof x); // null object
+
 // Weakly - a variable can change one type to another
 // Coercion
 

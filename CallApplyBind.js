@@ -1,7 +1,7 @@
 /**
  * Function borrowing methods
  *
- * CALL - is used for function borrowing
+ * CALL - is used for function borrowing (comma separated arguments)
  * APPLY - is same as call (function borrowing), the only difference is the way of passing the arguments (array of arguments)
  * BIND - is used for binding a method with an object, which can be invoked/ used later
  */

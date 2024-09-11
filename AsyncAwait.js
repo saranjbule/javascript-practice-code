@@ -14,15 +14,17 @@ async function asyncFun1() {
   return new Promise((res, rej) => res('done')); // it can return Promise directly (no wrapping of Promise)
 }
 
-console.log(asyncFun()); // Promise | Promise {<fulfilled>: true}
-console.log(asyncFun1()); // Promise | Promise {<pending>}
+console.log(asyncFun()); // Promise {<fulfilled>: true}
+console.log(asyncFun1()); // Promise {<pending>}
 
+// CORRECT
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve('Resolved Promise');
   }, 5000);
 });
 
+// WRONG
 const promise1 = new Promise((resolve, reject) => {
   setTimeout(resolve('Resolved Promise'), 5000);
 });
@@ -116,15 +118,13 @@ async function handlePromiseNew1() {
 const API = 'https://api.github.com/users/saranjbule';
 
 async function getData() {
-  const respose = await fetch(API);
-  console.log(respose);
-  const data = await respose.json();
-  console.log(data);
+  const response = await fetch(API);
+  console.log(response, typeof response); // <Promise> Object
+  const data = await response.json();
+  console.log(data, typeof data); // <Json> Object
 }
 
 getData();
-// without await at line 121 => promise
-// with await at line 121 => json data
 
 /**
  * handling erros
@@ -143,3 +143,8 @@ getData();
 * Because parsing the response body can be time-consuming, especially for large responses,
 * the .json() method is designed to return a Promise rather than blocking the main thread.
 */
+
+/**
+ * The AbortController interface
+ * represents a controller object that allows you to abort one or more Web requests as and when desired.
+ */
