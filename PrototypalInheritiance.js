@@ -1,3 +1,7 @@
+/**
+ * Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+ */
+
 const arr = [1, 2, 3];
 
 const obj = {

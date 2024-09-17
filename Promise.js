@@ -7,7 +7,7 @@
  *
  * - Promise State = Shows the state of a promise,
  * - initially it show pending state then it change to fullfilled/ Resolved or Rejected state
- *   - Pending => Fullfilled | Rejected
+ *   - Pending => Fullfilled ( Resolved | Rejected )
  *
  * - Promise Result = Used to store data returned by promise,
  * - initially it is undefined
@@ -58,7 +58,7 @@ promiseObj
 // then only once call the callback function
 */
 
-const API = "https://api.github.com/users/saranjbule";
+const API = 'https://api.github.com/users/saranjbule';
 
 // by default fetch returns promise
 
@@ -87,13 +87,13 @@ function tryPromise(data = null) {
         resolve(data);
       }, 0);
     } else {
-      reject("Promise Rejected");
+      reject('Promise Rejected');
     }
   });
   return promise;
 }
 
-const p = tryPromise("XX")
+const p = tryPromise('XX')
   .then((data) => console.log(data))
   .catch((err) => console.log(err));
 
