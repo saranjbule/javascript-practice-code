@@ -78,7 +78,7 @@ console.log(x); // f
 console.log(x.name); // x // build-in method get the name of function
 console.log(x.age); // undefined // age is not accessible outside
 
-console.log(x.length) // 1 | number of parameters (non-argument parameters)
+console.log(x.length); // 1 | number of parameters (non-argument parameters)
 
 // function have predefined properties - name, length, prototype ...
 x.category = 'xx'; // attaching a user defined property (category) to the JavaScript object (i.e., function)
@@ -216,3 +216,32 @@ setTimeout(() => console.log(5));
 console.log(0);
 
 // 6 4 0 2 1 5 3
+
+/**
+ * Guess Output
+ */
+// Problem 1
+var a = 10; // variable
+
+delete a; // false
+console.log(a); // 10
+
+b = 10; // property
+
+delete b; // true
+console.log(b) // Reference Error
+
+// Problem 2
+let hero = {
+  powerLevel: 99,
+  getPower(){
+    return this.powerLevel;// 99
+  }
+}
+
+console.log(hero.getPower()) // 99
+
+let getPower = hero.getPower;
+
+console.log(getPower()); // undefined 
+// this is not bound to hero object getPower is just a standalone function
