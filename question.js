@@ -229,19 +229,42 @@ console.log(a); // 10
 b = 10; // property
 
 delete b; // true
-console.log(b) // Reference Error
+console.log(b); // Reference Error
 
 // Problem 2
 let hero = {
   powerLevel: 99,
-  getPower(){
-    return this.powerLevel;// 99
-  }
-}
+  getPower() {
+    return this.powerLevel; // 99
+  },
+};
 
-console.log(hero.getPower()) // 99
+console.log(hero.getPower()); // 99
 
 let getPower = hero.getPower;
 
-console.log(getPower()); // undefined 
-// this is not bound to hero object getPower is just a standalone function
+console.log(getPower()); // undefined
+// this is not bound to hero object, getPower is just a standalone function
+
+// Arrays [] and objects {} are compared by reference in JavaScript not by their content
+const a = { 1: 'a' }; // same applicable for [1]
+
+const b = { 1: 'a' }; // [1]
+
+const c = a;
+
+console.log(a == b); // false
+console.log(a === b); // false
+
+console.log(JSON.stringify(a) == JSON.stringify(b)); // true
+console.log(JSON.stringify(a) === JSON.stringify(b)); // true
+
+console.log(a == c); // true
+console.log(a === c); // true
+
+// Implicity Type Coercion by ==
+console.log(1 == true); // true
+console.log(1 === true); // false
+console.log(0 == false); // true
+console.log(null == undefined); // true
+console.log(null === undefined); // false
