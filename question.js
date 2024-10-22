@@ -246,6 +246,9 @@ let getPower = hero.getPower;
 console.log(getPower()); // undefined
 // this is not bound to hero object, getPower is just a standalone function
 
+var hero2 = { powerLevel: 1, getPower };
+hero2.getPower(); // 1
+
 // Arrays [] and objects {} are compared by reference in JavaScript not by their content
 const a = { 1: 'a' }; // same applicable for [1]
 
@@ -268,3 +271,38 @@ console.log(1 === true); // false
 console.log(0 == false); // true
 console.log(null == undefined); // true
 console.log(null === undefined); // false
+
+console.log([1, 2] + [3, 4]); // "1, 23, 4"
+
+console.log([1, 2] - [3, 4]); // NaN
+
+/**
+ * Object {} - Pairtially Ordered
+ * For string keys, it maintains insertion order
+ * except for integer-like keys, which are sorted numerically.
+ */
+const obj = {};
+
+obj['b'] = 'b';
+obj['a'] = 'a';
+obj['2'] = '2';
+obj['1'] = '1';
+obj[0] = 0;
+
+console.log(obj);
+// { '0': 0, '1': '1', '2': '2', b: 'b', a: 'a' }
+
+/**
+ * Map - Ordered
+ * Always maintains insertion order for all keys.
+ */
+const map = new Map();
+
+map.set('b', 'b');
+map.set('a', 'a');
+map.set('2', '2');
+map.set('1', '1');
+map.set(0, 0);
+
+console.log(map);
+// Map(5) { 'b' => 'b', 'a' => 'a', '2' => '2', '1' => '1', 0 => 0 }
