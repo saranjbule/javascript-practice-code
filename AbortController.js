@@ -1,14 +1,16 @@
-const API = 'https://api.github.com/users/saranjbule';
+const API = 'https://httpbin.org/delay/10';
 
 const getAPIs = () => {
   let controller;
 
   const getAPI = async () => {
+    if (controller) controller.abort();
+
     controller = new AbortController();
     const signal = controller.signal;
+
     try {
       const result = await fetch(API, { signal });
-
       const jsonData = await result.json();
 
       console.log('Response', jsonData);
