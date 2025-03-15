@@ -1,6 +1,10 @@
 /**
- * Javascript is loosely, weakly, dynamically typed language
- * Javascript is synchronous and single threaded language
+ * Javascript is
+ * - loosely typed
+ * - weakly typed
+ * - dynamically typed
+ * - synchronous
+ * - single threaded language
  */
 
 // Loosely - a variable can hold multiple types of data type
@@ -25,7 +29,7 @@ x = null;
 console.log(x, typeof x); // null object
 
 // Weakly - a variable can change one type to another
-// Coercion
+// Type coercion
 
 // Implicit Coercion
 a = 10 + '0';

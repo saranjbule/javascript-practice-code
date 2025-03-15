@@ -35,8 +35,10 @@ console.log(m.d()); // d
  * Currying
  * Currying in JavaScript transforms a function with multiple parameters
  * into a nested series of functions, each taking a single parameter.
- * Currying helps you avoid passing the same variable multiple times,
- * and it helps you create a higher order function.
+ *
+ * Advantages
+ * - Currying helps you avoid passing the same variable multiple times
+ * - it helps in creating a higher order function
  * */
 
 const multiply = (a, b, c) => a * b * c;
@@ -162,7 +164,7 @@ starCounter = asynCounter();
 starCounter();
 
 /**
- * setTimeout
+ * setTimeout | Maintaining State in Async world
  */
 for (let i = 0; i < 5; i++) {
   setTimeout(function () {

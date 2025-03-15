@@ -36,8 +36,8 @@ function digonalTraversal(root, result = null, index = 0) {
     result[index].push(root.val);
   }
 
-  digonalTraversal(root.left, result, index + 1);
-  digonalTraversal(root.right, result, index);
+  digonalTraversal(root.left, result, index + 1); // left traverse
+  digonalTraversal(root.right, result, index); // + 1, right traverse
 
   return result;
 }

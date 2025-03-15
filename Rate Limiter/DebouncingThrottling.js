@@ -35,27 +35,27 @@ const getResult = (e) => {
 // Debouncing
 const getResult2 = debounce(getAPI, 500);
 
-const ip = document.querySelector("#ip");
-ip.addEventListener("keyup", (e) => {
+const ip = document.querySelector('#ip');
+ip.addEventListener('keyup', (e) => {
   const query = e.target.value;
   // getResult2(query);
   getResult3(query);
 });
 
-function debounce(func, dealy) {
+function debounce(func, delay) {
   let timer;
   return (...args) => {
     clearTimeout(timer);
     timer = setTimeout(() => {
       func(...args);
-    }, dealy);
+    }, delay);
   };
 }
 
 // Throttling
 const getResult3 = throttling(getAPI, 1000);
 
-function throttling(func, dealy) {
+function throttling(func, delay) {
   let flag = true;
   return function (...args) {
     if (flag) {
@@ -63,7 +63,7 @@ function throttling(func, dealy) {
       func(...args);
       setTimeout(() => {
         flag = true;
-      }, dealy);
+      }, delay);
     }
   };
 }

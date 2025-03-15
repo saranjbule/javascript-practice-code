@@ -21,6 +21,8 @@ function f() {
 console.log(arr.__proto__); // prototype of Array
 console.log(Array.prototype); // prototype of Array
 
+console.log(arr.__proto__ === Array.prototype); // true
+
 // prototype chaining
 console.log(arr.__proto__.__proto__); // prototype of Object | As everyting is object in JS
 console.log(arr.__proto__.__proto__.__proto__); // null

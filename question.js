@@ -103,12 +103,14 @@ const p1 = {
 
 console.log(p1); // {name: 'p1', getName: f}
 console.log(p1.name); // p1
+p1.getName(); // p1
 
 // creating object using prototype of p1
 const p2 = Object.create(p1);
 
 console.log(p2); // {}
 console.log(p2.name); // p1
+p2.getName(); // p1
 
 // predict output
 
@@ -306,3 +308,33 @@ map.set(0, 0);
 
 console.log(map);
 // Map(5) { 'b' => 'b', 'a' => 'a', '2' => '2', '1' => '1', 0 => 0 }
+
+/**
+ * Predict Output
+ */
+// QUE 1
+
+function f() {
+  let a = (b = c = 0);
+  a++;
+  return a;
+}
+
+f();
+
+console.log(typeof a); // undefined | a is declared with let (block scoped)
+console.log(typeof b); // number | b is not implicitly declared hence attached to global object (Window)
+
+// QUE 2
+
+console.log([] == ''); // true
+console.log([] == ![]); // true | type coercion
+/**
+ * [] → true
+ * ![] → false
+ * [] → "" → 0
+ * false == [] → 0 == 0 → true
+ */
+
+console.log([] === ![]); // false | strick equality
+// two object are never equal in javascript as JS compare object by reference and not by value

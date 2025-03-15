@@ -1,3 +1,10 @@
+/**
+ * The AbortController Interface
+ *
+ * - represents a controller object that allows us to abort one or more Web requests as and when desired.
+ * - Communicating with an asynchronous operation is done using an AbortSignal object.
+ */
+
 const API = 'https://httpbin.org/delay/10';
 
 const getAPIs = () => {
@@ -6,8 +13,8 @@ const getAPIs = () => {
   const getAPI = async () => {
     if (controller) controller.abort();
 
-    controller = new AbortController();
-    const signal = controller.signal;
+    controller = new AbortController(); // AbortController Constructor
+    const signal = controller.signal; // Signal object
 
     try {
       const result = await fetch(API, { signal });
@@ -15,7 +22,7 @@ const getAPIs = () => {
 
       console.log('Response', jsonData);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 

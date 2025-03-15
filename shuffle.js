@@ -6,8 +6,8 @@ Array.prototype.shuffle = function () {
   // fisher yates shuffle algorithm
   let l = this.length;
 
-  while (l > 0) {
-    randomIndex = Math.floor(Math.random() * l); // generate random number in range of 0 (inclusive) to l (exclusive)
+  while (l > 1) {
+    const randomIndex = Math.floor(Math.random() * l); // generate random number in range of 0 (inclusive) to l (exclusive)
     [this[randomIndex], this[l - 1]] = [this[l - 1], this[randomIndex]];
     l -= 1;
   }

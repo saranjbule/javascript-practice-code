@@ -32,9 +32,9 @@ console.log(array == arrayZ, array[2] == arrayZ[2]); // false false
 /**
  * Unpacking / Destructuring
  */
-// xx = [1, 100]
+xx = [1, 100]
 const [x0 = 'x0', x1 = 'x1', x2 = 'x2'] = xx;
-// x0 = 'x0' is alias
+// x0 = 'x0' is default value
 console.log(x0, x1, x2); // [1, 100, 'x2']
 
 // const [i0, i1] = 1;
@@ -75,18 +75,17 @@ const bin = (100).toString(2); // "1100100"
 
 // hex, oct, binary -> decimal
 const dec0 = parseInt('64', 16); // 100
+parseInt(64, 16); // 100
 const dec1 = parseInt('144', 8); // 100
+parseInt(144, 8); // 100
 const dec2 = parseInt('1100100', 2); // 100
-
-/**
- * Pass by assignment (Pass by value | Pass by reference)
- */
+parseInt(1100100, 2)
 
 const x = [10, 20];
 
-// pass by value
 function f(arg) {
-  arg = [1, 2]; // arg is now local to f which create new local binding with [1, 2]
+  // arg declared is empty so by default var, var has function scope
+  arg = [1, 2]; // var arg is now local to f which create new local binding with [1, 2]
   arg.push(40);
 }
 
@@ -180,8 +179,8 @@ console.log(d); // {'1,2,3': 120, 10: [1, 2, 3]}
 
 a.push(10);
 console.log(d, a); // {'1,2,3': 120, 10: [1, 2, 3, 10]}  [ 1, 2, 3, 10 ]
-// for keys in variable `a` reference is not stored but string conversion is stored
-// for values in variable `a` reference is stored
+// for keys in object string conversion is stored (not reference)
+// for values in object reference is stored
 
 console.log(d[a]); // undefined
 console.log(d[[1, 2, 3]]); // 120

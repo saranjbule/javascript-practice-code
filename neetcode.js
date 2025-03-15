@@ -2,6 +2,7 @@
  * Currying
  */
 
+// Solution 1
 function curry(fn) {
   let param = [];
 
@@ -11,10 +12,24 @@ function curry(fn) {
     if (fn.length === param.length) {
       res = fn(...param);
       param = [];
-
       return res;
     } else {
       return curried;
+    }
+  }
+
+  return curried;
+}
+
+// solution 2
+function curry(fn) {
+  function curried(...args) {
+    if (fn.length === args.length) {
+      return fn(...args);
+    } else {
+      return function (...newArgs) {
+        return curried(...args, ...newArgs);
+      };
     }
   }
 
@@ -114,9 +129,12 @@ const obj = {
   },
 };
 
-function convertObj(obj, k, result = {}) {
+function convertObj(obj, k = null, result = null) {
+  result ||= {};
+
   for (let key in obj) {
     const item = obj[key];
+
     if (k) {
       key = k + '_' + key;
     }
@@ -127,10 +145,12 @@ function convertObj(obj, k, result = {}) {
       result[key] = item;
     }
   }
+
   return result;
 }
 
 console.log(convertObj(obj));
+
 /**
 {
   name: 'saranj',

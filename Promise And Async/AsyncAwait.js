@@ -143,8 +143,3 @@ getData();
 * Because parsing the response body can be time-consuming, especially for large responses,
 * the .json() method is designed to return a Promise rather than blocking the main thread.
 */
-
-/**
- * The AbortController interface
- * represents a controller object that allows you to abort one or more Web requests as and when desired.
- */

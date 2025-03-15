@@ -11,25 +11,25 @@
  */
 
 const person1 = {
-  firstName: "saranj",
-  lastName: "bule",
-  getName: function (hometown = "nowhere") {
-    console.log(this.firstName + " " + this.lastName + " " + hometown);
+  firstName: 'saranj',
+  lastName: 'bule',
+  getName: function (hometown = 'nowhere') {
+    console.log(this.firstName + ' ' + this.lastName + ' ' + hometown);
   },
 };
 
 person1.getName(); // saranj bule nowhere
 
 const person2 = {
-  firstName: "xxx",
-  lastName: "yyy",
+  firstName: 'xxx',
+  lastName: 'yyy',
 };
 
 person1.getName.call(person2); // xxx yyy nowhere
 
-person1.getName.call(person2, "sausar"); // xxx yyy sausar
+person1.getName.call(person2, 'sausar'); // xxx yyy sausar
 
-person1.getName.apply(person2, ["somewhere"]); // xxx yyy somewhere
+person1.getName.apply(person2, ['somewhere']); // xxx yyy somewhere
 
 const getNameP2 = person1.getName.bind(person2);
 
@@ -61,8 +61,8 @@ console.log(multiplyY(5, 2, 1)); // 10
  */
 
 const user = {
-  name: "saranj",
-  section: "A",
+  name: 'saranj',
+  section: 'A',
 };
 
 function getDetail(address, grade, grade2) {
@@ -76,7 +76,7 @@ function getDetail(address, grade, grade2) {
 }
 
 const userGetDetail = getDetail.bind(user);
-userGetDetail("NGP", "Z", "p");
+userGetDetail('NGP', 'Z', 'p');
 
 /**
  * this = function (userGetDetail)
@@ -93,7 +93,7 @@ Function.prototype.myBind = myBind;
 
 const userGetDetail2 = getDetail.myBind(user);
 
-userGetDetail2("bgl", "A", "q");
-userGetDetail2("jmu", "B", "r");
-userGetDetail2("kol", "C", "s");
-userGetDetail2("punjab", "D", "t");
+userGetDetail2('bgl', 'A', 'q');
+userGetDetail2('jmu', 'B', 'r');
+userGetDetail2('kol', 'C', 's');
+userGetDetail2('punjab', 'D', 't');

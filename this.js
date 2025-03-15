@@ -1,7 +1,7 @@
 /**
  * this substitution
  * - Whenever the value of this keyword is undefined or null in non-strict mode
- * - then value of this gets replaced with global object
+ * - then value of this gets replaced with global object | Window (browser)
  */
 
 "use strict";
