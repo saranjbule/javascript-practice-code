@@ -338,3 +338,14 @@ console.log([] == ![]); // true | type coercion
 
 console.log([] === ![]); // false | strick equality
 // two object are never equal in javascript as JS compare object by reference and not by value
+
+d = {};
+d['constructor']; // result is function not undefined
+
+d = Object.create(null);
+d['constructor']; // as expected
+/**
+ * avoiding the prototype chain,
+ * so keys like constructor, __proto__, toString, etc., are just regular properties
+ * — no inherited behavior
+ */
