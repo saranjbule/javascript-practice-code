@@ -32,7 +32,7 @@ console.log(array == arrayZ, array[2] == arrayZ[2]); // false false
 /**
  * Unpacking / Destructuring
  */
-xx = [1, 100]
+xx = [1, 100];
 const [x0 = 'x0', x1 = 'x1', x2 = 'x2'] = xx;
 // x0 = 'x0' is default value
 console.log(x0, x1, x2); // [1, 100, 'x2']
@@ -79,7 +79,7 @@ parseInt(64, 16); // 100
 const dec1 = parseInt('144', 8); // 100
 parseInt(144, 8); // 100
 const dec2 = parseInt('1100100', 2); // 100
-parseInt(1100100, 2)
+parseInt(1100100, 2);
 
 const x = [10, 20];
 

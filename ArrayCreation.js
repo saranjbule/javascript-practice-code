@@ -18,3 +18,9 @@ console.log(arr3); // [0, 1, 2, 3, 4]
 
 const arr4 = [...Array(5).keys()];
 console.log(arr4); // [0, 1, 2, 3, 4]
+
+const arr5 = [...Array(5).values()];
+console.log(arr5); // [ undefined, undefined, undefined, undefined, undefined ]
+
+const arr6 = [...Array(5).entries()];
+console.log(arr6); // [[ 0, undefined ],[ 1, undefined ],[ 2, undefined ],[ 3, undefined ],[ 4, undefined ]]
