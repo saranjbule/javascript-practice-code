@@ -41,11 +41,11 @@ const add = (a, b, c) => {
 };
 
 const c = curry(add);
-console.log(c(1)(5)(10), 'result'); // 16 'result'
+console.log(c(1)(5)(10), "result"); // 16 'result'
 
-console.log(c(1, 3)(10), 'result'); // 14 'result'
+console.log(c(1, 3)(10), "result"); // 14 'result'
 
-console.log(c(1)(4, 10), 'result'); // 15 'result'
+console.log(c(1)(4, 10), "result"); // 15 'result'
 
 /**
  * JSON deeply equal
@@ -54,27 +54,27 @@ console.log(c(1)(4, 10), 'result'); // 15 'result'
 const obj1 = {
   x: 1,
   y: {
-    a: '1',
-    b: ['1', '2', '3'],
+    a: "1",
+    b: ["1", "2", "3"],
   },
 };
 
 const obj2 = {
   x: 1,
   y: {
-    a: '1',
-    b: ['1', '2', '3'],
+    a: "1",
+    b: ["1", "2", "3"],
   },
 };
 
 const o1 = {
-  a: '1',
+  a: "1",
   b: [1, 2, 3],
 };
 
 const o2 = {
-  a: '1',
-  b: ['1', '2', '3'],
+  a: "1",
+  b: ["1", "2", "3"],
 };
 
 function isEqual(o1, o2) {
@@ -85,8 +85,8 @@ function isEqual(o1, o2) {
     if (val2 === undefined) return false;
 
     if (
-      typeof val1 === 'object' &&
-      typeof val2 === 'object' &&
+      typeof val1 === "object" &&
+      typeof val2 === "object" &&
       typeof val1 !== null &&
       typeof val2 !== null
     ) {
@@ -106,23 +106,23 @@ console.log(isEqual(obj1, obj2));
  */
 
 const obj = {
-  name: 'saranj',
+  name: "saranj",
   place: {
-    town: 'sausar',
+    town: "sausar",
     xy: {
-      address: 'gajanan',
+      address: "gajanan",
       secondary: {
-        town: 'xy',
+        town: "xy",
       },
     },
   },
   age: 23,
   birth: {
-    town: 'sausar',
+    town: "sausar",
     detail: {
-      address: 'gajanan',
+      address: "gajanan",
       secondary: {
-        town: 'xy',
+        town: "xy",
       },
       hola: null,
     },
@@ -136,10 +136,10 @@ function convertObj(obj, k = null, result = null) {
     const item = obj[key];
 
     if (k) {
-      key = k + '_' + key;
+      key = k + "_" + key;
     }
 
-    if (typeof item === 'object' && item !== null) {
+    if (typeof item === "object" && item !== null) {
       convertObj(item, key, result);
     } else {
       result[key] = item;
@@ -164,3 +164,94 @@ console.log(convertObj(obj));
   birth_detail_hola: null
 }
  */
+
+/**
+ * Convert Object to JSON String
+ */
+
+const ob1 = { y: 1, x: 2 };
+const ob2 = { a: "Str", b: -12, c: true, d: null };
+const o3 = { key: { a: 1, b: [{}, null, "hello"] } };
+const o4 = true;
+const o5 = {
+  a: 10,
+  b: "#",
+  1: "saranj",
+  0: false,
+  12: ["x", ""],
+  9: { p: "op" },
+  3: null,
+};
+const o6 = [1, null, "", {}, [], true, false];
+
+const convertToJson = (item) => {
+  if (typeof item === "number" || [null, false, true].includes(item))
+    return `${item}`;
+
+  if (typeof item === "string") return `"${item}"`;
+
+  if (typeof item === "object") {
+    const isArray = Array.isArray(item);
+
+    let result = isArray ? "[" : "{";
+
+    for (let key in item) {
+      const val = item[key];
+
+      result += `${result.length === 1 ? "" : ","}`;
+
+      if (isArray) {
+        result += `${convertToJson(val)}`;
+      } else {
+        result += `${convertToJson(key)}:${convertToJson(val)}`;
+      }
+    }
+
+    if (isArray) result += "]";
+    else result += "}";
+
+    return result;h
+  }
+
+  return "";
+};
+
+console.log(1, JSON.stringify(ob1), convertToJson(ob1));
+console.log(2, JSON.stringify(ob2), convertToJson(ob2));
+console.log(3, JSON.stringify(o3), convertToJson(o3));
+console.log(4, JSON.stringify(o4), convertToJson(o4));
+console.log(5, JSON.stringify(o5), convertToJson(o5));
+console.log(6, JSON.stringify(o6), convertToJson(o6));
+
+const jsonDeepEqual = (obj1, obj2) => {
+  if (typeof obj1 !== typeof obj2) {
+    return false;
+  }
+
+  for (let key in obj1) {
+    const val1 = obj1[key];
+    const val2 = obj2[key];
+
+    if (val2 === undefined) return false;
+
+    if (val1 === null || val2 === null) {
+      if (val1 !== val2) return false;
+    } else if (Array.isArray(val1) || Array.isArray(val2)) {
+      if (Array.isArray(val1) && Array.isArray(val2)) {
+        if (jsonDeepEqual(val1, val2) === false) return res;
+      } else {
+        return false;
+      }
+    } else if (typeof val1 === "object" || typeof val2 === "object") {
+      if (typeof val1 === "object" && typeof val2 === "object") {
+        if (jsonDeepEqual(val1, val2) === false) return res;
+      } else {
+        return false;
+      }
+    } else if (val1 !== val2) {
+      return false;
+    }
+  }
+
+  return true;
+};
