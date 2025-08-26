@@ -43,8 +43,6 @@ console.log(x0, x1, x2); // [1, 100, 'x2']
 const [i0, i1] = 's';
 console.log(i0, i1); // 's', undefined
 
-// rest(...) operator always return array of items
-
 const [ax, ...bx] = 'ssdfs';
 console.log(ax, bx); // 's' ['s', 'd', 'f', 's']
 

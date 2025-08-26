@@ -9,6 +9,4 @@ function setTimeoutPoly(callback, duration) {
   callback();
 }
 
-function clearTimeoutPoly() {}
-
 setTimeoutPoly(() => console.log('heelo'), 5000);

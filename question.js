@@ -75,7 +75,7 @@ function x(para) {
 
 x('bule'); // saranj bule
 console.log(x); // f
-console.log(x.name); // x // build-in method get the name of function
+console.log(x.name); // x // build-in method to get the name of function
 console.log(x.age); // undefined // age is not accessible outside
 
 console.log(x.length); // 1 | number of parameters (non-argument parameters)
@@ -295,7 +295,7 @@ console.log(obj);
 // { '0': 0, '1': '1', '2': '2', b: 'b', a: 'a' }
 
 /**
- * Map - Ordered
+ * Map - Ordered | unorderd map
  * Always maintains insertion order for all keys.
  */
 const map = new Map();

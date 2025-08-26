@@ -1,5 +1,5 @@
-// this & frames & window & self 
-// - points to global object
+// this & frames & window & self - points to global object
+
 console.log(this);
 
 console.log(window);

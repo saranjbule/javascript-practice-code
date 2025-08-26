@@ -69,7 +69,7 @@ c();
 p(); // Reference Error: p is not defined as function p is stored inside c and not available outside of c
 
 /**
- * Difference between function expression and function declaration is hoisting.
+ * Difference between function expression / arrow function and function declaration is hoisting.
  */
 
 /**
