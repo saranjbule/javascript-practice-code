@@ -5,6 +5,7 @@
  * - dynamically typed
  * - synchronous
  * - single threaded language
+ * - use event loop
  */
 
 // Loosely - a variable can hold multiple types of data type

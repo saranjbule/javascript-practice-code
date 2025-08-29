@@ -16,6 +16,9 @@ console.log(arr2); // [0, 1, 2, 3, 4]
 const arr3 = Array.from({ length: 5 }, (item, index) => index);
 console.log(arr3); // [0, 1, 2, 3, 4]
 
+const arrUi = new Uint8Array(5).map((val, index) => index);
+console.log(arrUi); // [0, 1, 2, 3, 4]
+
 // Array is a constructor function that can be called with or without the new keyword
 // omit new, JavaScript still calls the constructor
 // Array() and new Array() are identical in behavior
