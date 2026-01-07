@@ -20,7 +20,6 @@ f0();
 
 // every setTimeoutFun hold unqiue value of i
 function f() {
-
   function setTimeoutFun(i) {
     setTimeout(function () {
       console.log(i); // 0, 1, 2...

@@ -1,7 +1,7 @@
 const d2 = {
-  10: 'z',
-  2: 'b',
-  30: 'a',
+  10: "z",
+  2: "b",
+  30: "a",
 };
 
 const e = Object.entries(d2);
@@ -17,21 +17,21 @@ e.sort(sortByVals);
 console.log(e); // [[30, 'a'], [2, 'b'], [10, 'z']]
 
 const arr = [
-  'a',
+  "a",
   5,
-  'A',
+  "A",
   12,
-  'p',
+  "p",
   101,
-  'Q',
-  'z',
-  'Z',
+  "Q",
+  "z",
+  "Z",
   10,
-  'C',
+  "C",
   1,
   3,
   2,
-  'L',
+  "L",
   5,
 ];
 
@@ -39,15 +39,15 @@ const result = arr.sort((a1, a2) => {
   const t1 = typeof a1;
   const t2 = typeof a2;
 
-  if (t1 === 'number' && t2 === 'number') {
+  if (t1 === "number" && t2 === "number") {
     return a1 - a2;
   }
 
-  if (t1 === 'string' && t2 === 'string') {
+  if (t1 === "string" && t2 === "string") {
     return a1.charCodeAt(0) - a2.charCodeAt(0);
   }
 
-  if (t1 === 'number') {
+  if (t1 === "number") {
     return -1;
   }
 

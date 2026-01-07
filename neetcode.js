@@ -210,7 +210,8 @@ const convertToJson = (item) => {
     if (isArray) result += "]";
     else result += "}";
 
-    return result;h
+    return result;
+    h;
   }
 
   return "";

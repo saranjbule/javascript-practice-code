@@ -13,35 +13,35 @@
  */
 
 const p = () =>
-    new Promise((res, rej) => {
-        const rand = Math.floor(Math.random() * 10);
+  new Promise((res, rej) => {
+    const rand = Math.floor(Math.random() * 10);
 
-        if (rand <= 7) {
-            rej('fail');
-        } else {
-            res('pass');
-        }
-    });
+    if (rand <= 7) {
+      rej("fail");
+    } else {
+      res("pass");
+    }
+  });
 
 const myFetch = (maxRetries, delay) =>
-    new Promise((res, rej) => {
-        if (maxRetries < 0) {
-            rej('no more retries left');
-            return;
-        }
+  new Promise((res, rej) => {
+    if (maxRetries < 0) {
+      rej("no more retries left");
+      return;
+    }
 
-        p()
-            .then((result) => {
-                res(result);
-            })
-            .catch(() => {
-                setTimeout(() => {
-                    myFetch(maxRetries - 1, delay)
-                        .then((result) => res(result))
-                        .catch((error) => rej(error));
-                }, delay);
-            });
-    });
+    p()
+      .then((result) => {
+        res(result);
+      })
+      .catch(() => {
+        setTimeout(() => {
+          myFetch(maxRetries - 1, delay)
+            .then((result) => res(result))
+            .catch((error) => rej(error));
+        }, delay);
+      });
+  });
 
 myFetch(5, 1000).then(console.log).catch(console.log);
 
@@ -50,26 +50,26 @@ myFetch(5, 1000).then(console.log).catch(console.log);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function fetchWithRetry(url, maxRetries, delay) {
-    let lastError;
+  let lastError;
 
-    for (let attempt = 0; attempt <= maxRetries; attempt++) {
-        try {
-            const res = await fetch(url);
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      const res = await fetch(url);
 
-            if (!res.ok) {
-                throw new Error(`HTTP ${res.status}`);
-            }
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
 
-            return await res.json();
-        } catch (err) {
-            lastError = err;
+      return await res.json();
+    } catch (err) {
+      lastError = err;
 
-            if (attempt === maxRetries) break;
+      if (attempt === maxRetries) break;
 
-            await sleep(delay);
-            // hold the execution contex for delayed time and then try again for next attempt in for loop
-        }
+      await sleep(delay);
+      // hold the execution contex for delayed time and then try again for next attempt in for loop
     }
+  }
 
-    throw lastError;
+  throw lastError;
 }

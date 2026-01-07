@@ -1,8 +1,8 @@
-const startButton = document.getElementById('start');
-const stopButton = document.getElementById('stop');
+const startButton = document.getElementById("start");
+const stopButton = document.getElementById("stop");
 
-startButton.addEventListener('click', startInterval);
-stopButton.addEventListener('click', stopInterval);
+startButton.addEventListener("click", startInterval);
+stopButton.addEventListener("click", stopInterval);
 
 // component to show current time to user
 
@@ -23,8 +23,8 @@ function stopInterval() {
 console.log(1);
 function foo() {
   console.log(2);
-  setTimeout(() => console.log('3/1'), 1000);
-  setTimeout(() => console.log('3/0'), 0);
+  setTimeout(() => console.log("3/1"), 1000);
+  setTimeout(() => console.log("3/0"), 0);
   console.log(4);
 }
 console.log(5);
@@ -35,7 +35,7 @@ console.log(6);
 
 // QUE: 2
 const person = {
-  name: 'saranj',
+  name: "saranj",
   print: () => {
     console.log(this.name); // undefined
     // arrow function do not have their own this they provide reference of this with surrounding env (window)
@@ -68,12 +68,12 @@ print();
 // Everything in javascript is an object
 
 function x(para) {
-  const n = 'saranj';
+  const n = "saranj";
   const age = 24;
   console.log(n, para);
 }
 
-x('bule'); // saranj bule
+x("bule"); // saranj bule
 console.log(x); // f
 console.log(x.name); // x // build-in method to get the name of function
 console.log(x.age); // undefined // age is not accessible outside
@@ -81,13 +81,13 @@ console.log(x.age); // undefined // age is not accessible outside
 console.log(x.length); // 1 | number of parameters (non-argument parameters)
 
 // function have predefined properties - name, length, prototype ...
-x.category = 'xx'; // attaching a user defined property (category) to the JavaScript object (i.e., function)
+x.category = "xx"; // attaching a user defined property (category) to the JavaScript object (i.e., function)
 console.log(x.category); // xx
 
-x.name = 'newName'; // can not alter in-build property
+x.name = "newName"; // can not alter in-build property
 console.log(x.name); // x
 
-x.category = 'yy'; // can alter user-defined property
+x.category = "yy"; // can alter user-defined property
 console.log(x.category); // yy
 
 console.log(x.prototype); // constructor object
@@ -95,7 +95,7 @@ console.log(x.prototype); // constructor object
 // The Object.create() method creates a new object using the prototype of the given object.
 
 const p1 = {
-  name: 'p1',
+  name: "p1",
   getName: function () {
     console.log(this.name);
   },
@@ -126,7 +126,7 @@ const userFunctionStore = {
   },
 };
 
-const user1 = createUser('Foo');
+const user1 = createUser("Foo");
 console.log(user1); //{name: 'Foo'}
 console.log(user1.name); // Foo
 user1.greet(); // Hello Foo
@@ -144,11 +144,11 @@ console.log(fun1); // fn (function declaration)
 /** order doesn't matter */
 var fun1 = function () {
   // let & const doesn't work
-  console.log('In function expression');
+  console.log("In function expression");
 };
 
 function fun1() {
-  console.log('In function declaration');
+  console.log("In function declaration");
 }
 /****/
 
@@ -163,14 +163,14 @@ console.log(fun1); // fn (function expression)
 
 let variable = 0;
 
-const p = new Promise((resolve, reject) => resolve('hello')).then(console.log); // asynchronous operation
+const p = new Promise((resolve, reject) => resolve("hello")).then(console.log); // asynchronous operation
 
 const pp = new Promise((resolve, reject) => resolve(++variable)).then(
-  console.log(variable) // synchronous operation
+  console.log(variable), // synchronous operation
 );
 
 console.log(++variable); // 1 2
-console.log('Here'); // Here hello
+console.log("Here"); // Here hello
 
 let i = 0; // with var as well, same result
 
@@ -252,9 +252,9 @@ var hero2 = { powerLevel: 1, getPower };
 hero2.getPower(); // 1
 
 // Arrays [] and objects {} are compared by reference in JavaScript not by their content
-const a = { 1: 'a' }; // same applicable for [1]
+const a = { 1: "a" }; // same applicable for [1]
 
-const b = { 1: 'a' }; // [1]
+const b = { 1: "a" }; // [1]
 
 const c = a;
 
@@ -285,10 +285,10 @@ console.log([1, 2] - [3, 4]); // NaN
  */
 const obj = {};
 
-obj['b'] = 'b';
-obj['a'] = 'a';
-obj['2'] = '2';
-obj['1'] = '1';
+obj["b"] = "b";
+obj["a"] = "a";
+obj["2"] = "2";
+obj["1"] = "1";
 obj[0] = 0;
 
 console.log(obj);
@@ -300,10 +300,10 @@ console.log(obj);
  */
 const map = new Map();
 
-map.set('b', 'b');
-map.set('a', 'a');
-map.set('2', '2');
-map.set('1', '1');
+map.set("b", "b");
+map.set("a", "a");
+map.set("2", "2");
+map.set("1", "1");
 map.set(0, 0);
 
 console.log(map);
@@ -327,7 +327,7 @@ console.log(typeof b); // number | b is not implicitly declared hence attached t
 
 // QUE 2
 
-console.log([] == ''); // true
+console.log([] == ""); // true
 console.log([] == ![]); // true | type coercion
 /**
  * [] → true
@@ -340,10 +340,10 @@ console.log([] === ![]); // false | strick equality
 // two object are never equal in javascript as JS compare object by reference and not by value
 
 d = {};
-d['constructor']; // result is function not undefined
+d["constructor"]; // result is function not undefined
 
 d = Object.create(null);
-d['constructor']; // as expected
+d["constructor"]; // as expected
 /**
  * avoiding the prototype chain,
  * so keys like constructor, __proto__, toString, etc., are just regular properties

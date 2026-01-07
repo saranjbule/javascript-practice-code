@@ -35,8 +35,8 @@ const getResult = (e) => {
 // Debouncing
 const getResult2 = debounce(getAPI, 500);
 
-const ip = document.querySelector('#ip');
-ip.addEventListener('keyup', (e) => {
+const ip = document.querySelector("#ip");
+ip.addEventListener("keyup", (e) => {
   const query = e.target.value;
   // getResult2(query);
   getResult3(query);

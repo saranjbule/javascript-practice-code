@@ -109,8 +109,8 @@ function Employee(name) {
 
 const e = new Employee("saranj");
 e.getName(); // saranj
-console.log(e.category) // undefined
+console.log(e.category); // undefined
 e.getCategoryInternal(); // Uncaught TypeError: e.getCategoryInternal is not a function
 e.getCategory(); // xx
-e.setCategory('yy');
+e.setCategory("yy");
 e.getCategory(); // yy

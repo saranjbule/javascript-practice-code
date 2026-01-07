@@ -10,7 +10,7 @@ const module = () => {
 
   // private method
   const c = (x) => {
-    console.log('c', x);
+    console.log("c", x);
   };
 
   // public attribute
@@ -19,7 +19,7 @@ const module = () => {
   // public method
   const d = () => {
     c(a); // getter/ accessor
-    console.log('d');
+    console.log("d");
   };
 
   return { b, d };
@@ -69,10 +69,10 @@ const onceFuc = () => {
   let ran = true;
   return () => {
     if (ran) {
-      console.log('Done');
+      console.log("Done");
       ran = false;
     } else {
-      console.log('Already Done');
+      console.log("Already Done");
     }
   };
 };
@@ -139,9 +139,9 @@ const memoization = () => {
 };
 
 const cM = memoization();
-cM('a', 1); // {'a': 1}
-cM('x', 10); // {'a': 1, 'x': 10}
-cM('a', 3); // {'a': 4, 'x': 10}
+cM("a", 1); // {'a': 1}
+cM("x", 10); // {'a': 1, 'x': 10}
+cM("a", 3); // {'a': 4, 'x': 10}
 
 /**
  * Maintaining State in Async World

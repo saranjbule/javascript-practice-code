@@ -5,7 +5,7 @@
 const arr = [1, 2, 3];
 
 const obj = {
-  name: 'saranj',
+  name: "saranj",
   age: 24,
   getName: function () {
     console.log(this.name, this.age);
@@ -15,7 +15,7 @@ const obj = {
 function f() {
   const a = 1;
   this.b = 2;
-  console.log('hello from f', a, this.b);
+  console.log("hello from f", a, this.b);
 }
 
 console.log(arr.__proto__); // prototype of Array
@@ -40,7 +40,7 @@ console.log(f.__proto__.__proto__); // prototype of Object
 console.log(f.__proto__.__proto__.__proto__); // null
 
 const obj2 = {
-  name: 'x',
+  name: "x",
 };
 
 // Bad Practice : Never do this

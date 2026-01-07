@@ -58,7 +58,7 @@ promiseObj
 // then only once call the callback function
 */
 
-const API = 'https://api.github.com/users/saranjbule';
+const API = "https://api.github.com/users/saranjbule";
 
 // by default fetch returns promise
 
@@ -87,13 +87,13 @@ function tryPromise(data = null) {
         resolve(data);
       }, 0);
     } else {
-      reject('Promise Rejected');
+      reject("Promise Rejected");
     }
   });
   return promise;
 }
 
-const p = tryPromise('XX')
+const p = tryPromise("XX")
   .then((data) => console.log(data))
   .catch((err) => console.log(err));
 

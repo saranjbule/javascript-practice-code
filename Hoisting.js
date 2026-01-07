@@ -44,24 +44,24 @@ let z = 3;
 
 // function declaration/ function statement
 function greet(param) {
-  console.log('Hello', param); // saranj is passed to greet as a parameter which is local to the function
+  console.log("Hello", param); // saranj is passed to greet as a parameter which is local to the function
 }
 
-greet('saranj'); // saranj is argument
+greet("saranj"); // saranj is argument
 
 // Arrow function
 var a = () => {
-  console.log('hi from a');
+  console.log("hi from a");
 };
 
 // function expression
 var b = function () {
-  console.log('hi from b');
+  console.log("hi from b");
 };
 
 // name function expression
 var c = function p() {
-  console.log('hi from p');
+  console.log("hi from p");
   console.log(p); // function p
 };
 

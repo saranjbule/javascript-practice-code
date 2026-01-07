@@ -6,32 +6,32 @@
  * Event capturing also know as event trickling
  */
 
-const grandparent = document.getElementById('grandparent');
-const parent = document.getElementById('parent');
-const child = document.getElementById('child');
+const grandparent = document.getElementById("grandparent");
+const parent = document.getElementById("parent");
+const child = document.getElementById("child");
 
 grandparent.addEventListener(
-  'click',
+  "click",
   function () {
-    console.log('Grand Parent');
+    console.log("Grand Parent");
   },
-  false // true capturing
+  false, // true capturing
 );
 
 parent.addEventListener(
-  'click',
+  "click",
   function () {
-    console.log('Parent');
+    console.log("Parent");
   },
-  false // false bubbling
+  false, // false bubbling
 );
 
 child.addEventListener(
-  'click',
+  "click",
   function () {
-    console.log('Child');
+    console.log("Child");
   },
-  false // true capturing
+  false, // true capturing
 );
 
 // Grand parent > Child > Parent

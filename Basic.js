@@ -1,4 +1,4 @@
-console.log('Hello Saranj');
+console.log("Hello Saranj");
 
 const a1 = 10,
   b = 20;
@@ -33,17 +33,17 @@ console.log(array == arrayZ, array[2] == arrayZ[2]); // false false
  * Unpacking / Destructuring
  */
 xx = [1, 100];
-const [x0 = 'x0', x1 = 'x1', x2 = 'x2'] = xx;
+const [x0 = "x0", x1 = "x1", x2 = "x2"] = xx;
 // x0 = 'x0' is default value
 console.log(x0, x1, x2); // [1, 100, 'x2']
 
 // const [i0, i1] = 1;
 // TypeError: 1 is not iterable
 
-const [i0, i1] = 's';
+const [i0, i1] = "s";
 console.log(i0, i1); // 's', undefined
 
-const [ax, ...bx] = 'ssdfs';
+const [ax, ...bx] = "ssdfs";
 console.log(ax, bx); // 's' ['s', 'd', 'f', 's']
 
 const [az, ...bz] = [1, 2, 3];
@@ -52,16 +52,16 @@ console.log(az, bz); // 1 [2, 3]
 // const [ay, by] = { 1: 'a', 2: 'b', 3: 'c', 4: 'd' };
 // console.log(ay, by); // TypeError: {(intermediate value)} is not iterable
 
-const { xxx, yyy, ...rest } = { xxx: 'a', yyy: 'b', 3: 'c', 4: 'd' };
+const { xxx, yyy, ...rest } = { xxx: "a", yyy: "b", 3: "c", 4: "d" };
 console.log(xxx, yyy, rest); // a b {3: 'c', 4: 'd'}
 
 console.log(2 ** 10); // 1024
 
 console.log(parseInt(null)); // NaN
-console.log(parseInt('')); // NaN
+console.log(parseInt("")); // NaN
 
 console.log(Number(null)); // 0
-console.log(Number('')); // 0
+console.log(Number("")); // 0
 
 /**
  * Conversion
@@ -72,11 +72,11 @@ const oct = (100).toString(8); // "144"
 const bin = (100).toString(2); // "1100100"
 
 // hex, oct, binary -> decimal
-const dec0 = parseInt('64', 16); // 100
+const dec0 = parseInt("64", 16); // 100
 parseInt(64, 16); // 100
-const dec1 = parseInt('144', 8); // 100
+const dec1 = parseInt("144", 8); // 100
 parseInt(144, 8); // 100
-const dec2 = parseInt('1100100', 2); // 100
+const dec2 = parseInt("1100100", 2); // 100
 parseInt(1100100, 2);
 
 const x = [10, 20];
@@ -103,7 +103,7 @@ console.log(x); // [30, 20, 40]
  * Falsy Values
  */
 
-for (let i of [0, '', false, null, undefined, {}, []]) {
+for (let i of [0, "", false, null, undefined, {}, []]) {
   console.log(i, Boolean(i), typeof i);
 }
 
@@ -131,7 +131,7 @@ console.log(Object.keys([10, 20])); // ['0', '1']
  * string <-> char code
  */
 
-console.log('A'.charCodeAt()); // 65 // default take 0 index
+console.log("A".charCodeAt()); // 65 // default take 0 index
 console.log(String.fromCharCode(65)); // A
 
 /**
@@ -143,7 +143,7 @@ const arr = [1, 2, 3];
 console.log(arr.includes(2)); // true
 console.log(arr.includes(20)); // false
 
-const obj = { 10: 'a', 20: 'c' };
+const obj = { 10: "a", 20: "c" };
 
 console.log(arr, Array.isArray(arr)); // true
 console.log(obj, Array.isArray(obj)); // false
@@ -153,9 +153,9 @@ console.log(obj, Array.isArray(obj)); // false
  */
 
 const d2 = {
-  10: 'z',
-  2: 'b',
-  30: 'a',
+  10: "z",
+  2: "b",
+  30: "a",
 };
 
 const e = Object.entries(d2);
@@ -182,28 +182,28 @@ console.log(d, a); // {'1,2,3': 120, 10: [1, 2, 3, 10]}  [ 1, 2, 3, 10 ]
 
 console.log(d[a]); // undefined
 console.log(d[[1, 2, 3]]); // 120
-console.log(d['1,2,3']); // 120
+console.log(d["1,2,3"]); // 120
 
 const d1 = { 10: { 1: 100, 2: 200 } };
 d1[20] = { 1: 20, 3: 40 };
 console.log(d1); // { 10: { 1: 100, 2: 200 }, 20: { 1: 20, 3: 40 }}
 
-d1[d] = 'val';
+d1[d] = "val";
 console.log(d1); // {10: {…}, 20: {…}, [object Object]: 'val'}
 
 const i = 1,
-  s = 'a',
+  s = "a",
   o = [1, 2],
-  d3 = { 1: 's' };
+  d3 = { 1: "s" };
 
 const dict = {
-  [i]: 'v1',
-  [s]: 'v2',
-  [o]: 'v3',
-  [JSON.stringify(d3)]: 'v4',
+  [i]: "v1",
+  [s]: "v2",
+  [o]: "v3",
+  [JSON.stringify(d3)]: "v4",
 };
 
 console.log(dict); // { '1': 'v1', a: 'v2', '1,2': 'v3', '{"1":"s"}': 'v4' }
 
 console.log(dict[1]); // v1 // keys in object by default get converted to string
-console.log(dict['1']); // v1
+console.log(dict["1"]); // v1

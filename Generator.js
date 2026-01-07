@@ -4,7 +4,7 @@
  * Example 1
  */
 const getName = function* () {
-  yield 'saranj';
+  yield "saranj";
 };
 
 const nameGen = getName();
@@ -17,7 +17,7 @@ console.log(nameGen.next()); // {value: undefined, done: true}
  * Example 2
  */
 const getName2 = function* () {
-  while (true) yield 'saranj';
+  while (true) yield "saranj";
 };
 
 const nameGen2 = getName2();
@@ -47,7 +47,7 @@ console.log(numGen.next()); // {value: 2, done: false}
  */
 const getArr = function* (arr) {
   for (let i of arr) {
-    if (typeof i === 'number') yield i;
+    if (typeof i === "number") yield i;
     else yield* getArr(i);
   }
 };
@@ -69,8 +69,8 @@ console.log(arrGen.next()); // {value: 2, done: false}
 
 async function* fetchData() {
   const urls = [
-    'https://api.example.com/data1',
-    'https://api.example.com/data2',
+    "https://api.example.com/data1",
+    "https://api.example.com/data2",
   ];
 
   for (const url of urls) {

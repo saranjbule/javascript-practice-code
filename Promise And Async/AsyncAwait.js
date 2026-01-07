@@ -11,7 +11,7 @@ async function asyncFun() {
 }
 
 async function asyncFun1() {
-  return new Promise((res, rej) => res('done')); // it can return Promise directly (no wrapping of Promise)
+  return new Promise((res, rej) => res("done")); // it can return Promise directly (no wrapping of Promise)
 }
 
 console.log(asyncFun()); // Promise {<fulfilled>: true}
@@ -20,13 +20,13 @@ console.log(asyncFun1()); // Promise {<pending>}
 // CORRECT
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve('Resolved Promise');
+    resolve("Resolved Promise");
   }, 5000);
 });
 
 // WRONG
 const promise1 = new Promise((resolve, reject) => {
-  setTimeout(resolve('Resolved Promise'), 5000);
+  setTimeout(resolve("Resolved Promise"), 5000);
 });
 
 // In promise1, the resolve('Resolved Promise') is called immediately,
@@ -41,7 +41,7 @@ const promise1 = new Promise((resolve, reject) => {
 // old way
 function handlePromiseOld() {
   promise.then((res) => console.log(res));
-  console.log('in Old');
+  console.log("in Old");
 }
 
 handlePromiseOld();
@@ -50,10 +50,10 @@ handlePromiseOld();
 
 // new way
 async function handlePromiseNew() {
-  console.log('hello');
+  console.log("hello");
   const result = await promise;
   console.log(result);
-  console.log('in new');
+  console.log("in new");
 }
 
 handlePromiseNew();
@@ -68,18 +68,18 @@ handlePromiseNew();
 
 const p = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve('i am done');
+    resolve("i am done");
   }, 10000);
 });
 
 const p1 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve('i am done 2');
+    resolve("i am done 2");
   }, 5000);
 });
 
 async function handlePromiseNew1() {
-  console.log('hello');
+  console.log("hello");
   const result = await p;
   console.log(result);
 
@@ -115,7 +115,7 @@ async function handlePromiseNew1() {
 // i am done 2 # after 5sec
 // i am done # after 5sec, total 10sec after
 
-const API = 'https://api.github.com/users/saranjbule';
+const API = "https://api.github.com/users/saranjbule";
 
 async function getData() {
   const response = await fetch(API);

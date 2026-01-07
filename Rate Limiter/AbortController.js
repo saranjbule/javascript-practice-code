@@ -5,7 +5,7 @@
  * - Communicating with an asynchronous operation is done using an AbortSignal object.
  */
 
-const API = 'https://httpbin.org/delay/10';
+const API = "https://httpbin.org/delay/10";
 
 const getAPIs = () => {
   let controller;
@@ -20,7 +20,7 @@ const getAPIs = () => {
       const result = await fetch(API, { signal });
       const jsonData = await result.json();
 
-      console.log('Response', jsonData);
+      console.log("Response", jsonData);
     } catch (err) {
       console.error(err);
     }
@@ -35,8 +35,8 @@ const getAPIs = () => {
 
 const userData = getAPIs();
 
-const startButton = document.getElementById('start');
-const stopButton = document.getElementById('stop');
+const startButton = document.getElementById("start");
+const stopButton = document.getElementById("stop");
 
-startButton.addEventListener('click', userData.getAPI);
-stopButton.addEventListener('click', userData.stopAPI);
+startButton.addEventListener("click", userData.getAPI);
+stopButton.addEventListener("click", userData.stopAPI);
