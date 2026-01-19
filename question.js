@@ -349,3 +349,40 @@ d["constructor"]; // as expected
  * so keys like constructor, __proto__, toString, etc., are just regular properties
  * — no inherited behavior
  */
+
+/** Output Queation **/
+console.log(1);
+
+setTimeout(() => {
+console.log(2);
+}, 10);
+
+setTimeout(() => {
+console.log(3);
+}, 0);
+
+new Promise((_, reject) => {
+console.log(4);
+reject(5);
+console.log(6);
+})
+.then(() => console.log(7))
+.catch(() => console.log(8))
+.then(() => console.log(9))
+.catch(() => console.log(10))
+.then(() => console.log(11))
+.then(console.log)
+.finally(() => console.log(12));
+
+console.log(13);
+
+/**
+ * Synchronous code
+ * 1 4 6 13
+ *  
+ * Priority queue | Micro-task queue
+ * 8 9 11 undefined 12
+ * 
+ * Callback queue | task queue
+ * 3 2
+ */
