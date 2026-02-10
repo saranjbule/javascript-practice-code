@@ -177,7 +177,7 @@ console.log(d); // {'1,2,3': 120, 10: [1, 2, 3]}
 
 a.push(10);
 console.log(d, a); // {'1,2,3': 120, 10: [1, 2, 3, 10]}  [ 1, 2, 3, 10 ]
-// for keys in object string conversion is stored (not reference)
+// for keys in object string conversion (.toString()) is stored (not reference)
 // for values in object reference is stored
 
 console.log(d[a]); // undefined
