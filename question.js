@@ -386,3 +386,18 @@ console.log(13);
  * Callback queue | task queue
  * 3 2
  */
+
+// run setTimeout in Sync, Output will be 1 2 3;
+const timer = [{time: 3000, id: 1}, {time: 1000, id: 2}, {time: 2000, id: 3}];
+
+const runTimerSync = async () => {
+    for (let timerObj of timer){
+        const timerId = await new Promise((resolve, reject) => {
+            setTimeout(() => resolve(timerObj.id), timerObj.time);
+        });
+      
+        console.log(timerId);
+    }
+}
+
+runTimerSync();
