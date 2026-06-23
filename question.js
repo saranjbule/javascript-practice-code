@@ -401,3 +401,10 @@ const runTimerSync = async () => {
 }
 
 runTimerSync();
+
+// run setTimeout in Async, Output will be [1, 2, 3];
+const promiseArr = timer.map((timerObj) => new Promise((resolve, reject) => {
+    setTimeout(() => resolve(timerObj.id), timerObj.time);
+}))
+
+Promise.all(promiseArr).then((result) => console.log(result));
