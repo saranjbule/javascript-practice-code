@@ -16,6 +16,7 @@ console.log(xx, y); // [1, 100] [1, 100]
 
 const array = [1, 2, [11, 12]];
 const arrayX = [...array]; // copy at first layer
+const arrayS = array.slice(); // shallow copy
 console.log(array == arrayX, array[2] == arrayX[2]); // false true
 
 const arrayY = JSON.parse(JSON.stringify(array)); // lossy deep clone
