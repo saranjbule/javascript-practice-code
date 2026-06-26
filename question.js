@@ -339,6 +339,13 @@ console.log([] == ![]); // true | type coercion
 console.log([] === ![]); // false | strick equality
 // two object are never equal in javascript as JS compare object by reference and not by value
 
+console.log(0 === -0); // true, same for 0 == -0
+console.log(Object.is(0, -0)) // false
+console.log(NaN == NaN); // false
+console.log(NaN === NaN); // false
+console.log(Object.is(NaN, NaN)); // true
+console.log(typeof NaN); // number
+
 d = {};
 d["constructor"]; // result is function not undefined
 
